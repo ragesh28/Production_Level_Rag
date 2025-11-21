@@ -1,0 +1,9 @@
+
+# System Files - NEVER upload virtual environments
+venv/
+__pycache__/
+*.pyc
+
+# Temporary Data
+temp_*
+chroma_db_data/

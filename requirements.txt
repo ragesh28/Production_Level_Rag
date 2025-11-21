@@ -1,0 +1,11 @@
+streamlit
+langchain==0.3.27
+langchain-community==0.3.30
+langchain-google-genai
+langchain-qdrant==0.1.4
+fastembed==0.3.4
+pypdf==5.1.0
+python-dotenv
+qdrant-client
+ddgs
+flashrank
