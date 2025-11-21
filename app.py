@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import base64
 import time
+import pandas as pd  # <--- NEW IMPORT FOR EXCEL
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -27,7 +28,7 @@ from langchain.retrievers.document_compressors import FlashrankRerank
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Production RAG", layout="wide", page_icon="🧠")
-st.title("Production RAG 🧠 (Hybrid + Memory + Stream)")
+st.title("Production RAG 🧠 (Hybrid + Memory + Stream + Excel)")
 
 # 1. SETUP GEMINI 2.5 FLASH
 llm = ChatGoogleGenerativeAI(
@@ -39,7 +40,6 @@ llm = ChatGoogleGenerativeAI(
 # 2. SETUP QDRANT CLOUD
 url = os.getenv("QDRANT_URL")
 api_key = os.getenv("QDRANT_API_KEY")
-# Using the collection we created with setup_db.py
 collection_name = "production_hybrid_v4" 
 
 if not url or not api_key:
@@ -68,6 +68,13 @@ def summarize_image(image_file):
     response = llm.invoke([message])
     return response.content
 
+# --- HELPER: EXCEL TO TEXT (NEW) ---
+def process_excel(file_path):
+    """Reads Excel and converts rows to text"""
+    df = pd.read_excel(file_path)
+    # Convert the entire dataframe to a string format the AI can read
+    return df.to_string(index=False)
+
 # --- 3. SIDEBAR (DATA LOADING) ---
 with st.sidebar:
     st.header("⚙️ Settings")
@@ -79,7 +86,14 @@ with st.sidebar:
     
     st.divider()
     st.header("📂 Knowledge Base")
-    uploaded_files = st.file_uploader("Upload Data", type=["pdf", "txt", "jpg", "png"], accept_multiple_files=True)
+    
+    # UPDATED: Added xlsx and xls to the accepted types
+    uploaded_files = st.file_uploader(
+        "Upload Data", 
+        type=["pdf", "txt", "jpg", "png", "xlsx", "xls"], 
+        accept_multiple_files=True
+    )
+    
     user_text_input = st.text_area("Paste Text:", height=100)
     process_btn = st.button("Save to Brain")
 
@@ -89,14 +103,28 @@ with st.sidebar:
             if uploaded_files:
                 for uploaded_file in uploaded_files:
                     file_path = f"./temp_{uploaded_file.name}"
+                    
+                    # LOGIC 1: IMAGES
                     if uploaded_file.type in ["image/jpeg", "image/png"]:
                         desc = summarize_image(uploaded_file)
                         documents.append(Document(page_content=desc, metadata={"source": uploaded_file.name}))
+                    
+                    # LOGIC 2: FILES (PDF/TXT/EXCEL)
                     else:
+                        # Save temp file
                         with open(file_path, "wb") as f:
                             f.write(uploaded_file.getbuffer())
+                        
+                        # Handle PDF
                         if uploaded_file.name.endswith(".pdf"):
                             documents.extend(PyPDFLoader(file_path).load())
+                        
+                        # Handle Excel (NEW)
+                        elif uploaded_file.name.endswith((".xlsx", ".xls")):
+                            text_data = process_excel(file_path)
+                            documents.append(Document(page_content=text_data, metadata={"source": uploaded_file.name}))
+                        
+                        # Handle Text
                         else:
                             documents.extend(TextLoader(file_path, encoding="utf-8").load())
             
@@ -157,12 +185,12 @@ try:
     if use_web_search:
         tools.append(DuckDuckGoSearchRun())
 
-    # SYSTEM PROMPT (MEMORY FIX IS HERE)
+    # SYSTEM PROMPT
     prompt = ChatPromptTemplate.from_messages([
         ("system", """
         You are a smart assistant. Follow this logic strictly:
-        1. ALWAYS check the 'chat_history' first. If the user is referring to a previous message (like "What is my name?"), answer from memory.
-        2. If the answer is NOT in memory, use 'knowledge_base_search' to check the documents.
+        1. ALWAYS check the 'chat_history' first. If the user is referring to a previous message, answer from memory.
+        2. If the answer is NOT in memory, use 'knowledge_base_search' to check the documents (including Excel data).
         3. Use web search only for current events.
         """),
         MessagesPlaceholder(variable_name="chat_history"), 
@@ -189,11 +217,11 @@ for message in st.session_state.messages:
 # --- 6. HANDLE USER INPUT ---
 if prompt_input := st.chat_input("Ask anything..."):
     
-    # Display User Message immediately
+    # Display User Message
     with st.chat_message("user"):
         st.markdown(prompt_input)
 
-    # Prepare History for the Agent (Excluding the current new input to avoid duplicates)
+    # Prepare History
     chat_history = []
     for msg in st.session_state.messages:
         if msg["role"] == "user":
@@ -213,6 +241,6 @@ if prompt_input := st.chat_input("Ask anything..."):
         # Stream the output
         st.write_stream(stream_text(answer))
     
-    # Update Session State (Memory)
+    # Update Session State
     st.session_state.messages.append({"role": "user", "content": prompt_input})
     st.session_state.messages.append({"role": "assistant", "content": answer})
