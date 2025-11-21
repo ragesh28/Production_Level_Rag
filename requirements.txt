@@ -9,3 +9,5 @@ python-dotenv
 qdrant-client
 ddgs
 flashrank
+pandas
+openpyxl
