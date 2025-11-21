@@ -2,13 +2,11 @@
 
 A sophisticated Retrieval-Augmented Generation (RAG) system built with **LangChain**, **Gemini 2.5 Flash**, and **Qdrant Cloud**. This system employs a **Hybrid Search architecture** (Vector + Keyword) with **Reranking** and **Agentic decision-making**.
 
-## 🎥 Project Demo
+### 🎥 Project Demo
 
-Click the link below to watch the application in action:
+Click the link below to watch the video player:
 
-[**▶️ Watch the Demo Video**](https://github.com/ragesh28/Production_Level_Rag/raw/main/demo.mp4)
-
-# Production-Level RAG Agent 🧠
+[**▶️ Watch the Demo Video**](https://github.com/ragesh28/Production_Level_Rag/blob/main/demo.mp4)
 
 Here is a demo of the application in action:
 
