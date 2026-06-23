@@ -235,10 +235,6 @@ def is_delete_command(command: str) -> bool:
 
 @tool
 def run_cmd(command: str) -> str:
-    import platform
-    if platform.system() == "Linux":
-        return "❌ System control is disabled in cloud environments."
-
     """Execute a system command on the user's Windows PC.
     Use this for:
     1. Opening Apps (e.g. 'start chrome', 'start notepad', 'start spotify', 'start code').
@@ -246,6 +242,9 @@ def run_cmd(command: str) -> str:
     3. Opening Websites (e.g. 'start https://google.com').
     Input must be a valid Windows shell command.
     """
+    import platform
+    if platform.system() == "Linux":
+        return "❌ System control is disabled in cloud environments."
     cmd_lower = command.lower().strip()
     
     # 0a. Block direct access to password.txt and users.json
