@@ -3,7 +3,7 @@
 Welcome to NeuralRAG!
 
 ### 🟢 Live Instance Status
-**Live Link:** [https://par-layer-widely-victor.trycloudflare.com](https://par-layer-widely-victor.trycloudflare.com)
+**Live Link:** [https://grades-material-difference-burke.trycloudflare.com](https://grades-material-difference-burke.trycloudflare.com)
 *(This link is automatically updated by GitHub Actions every time a new instance starts.)*
 
 ---
