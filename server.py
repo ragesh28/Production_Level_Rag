@@ -138,6 +138,18 @@ key_pool = KeyPool()
 # MODEL CONFIGURATIONS
 # ============================================================
 MODEL_CONFIGS = {
+    "gemini": {
+        "name": "Gemini 1.5 Flash",
+        "type": "gemini",
+        "key_provider": "gemini",
+        "model": "gemini-1.5-flash",
+    },
+    "groq": {
+        "name": "Groq (Llama 3 70B)",
+        "base_url": "https://api.groq.com/openai/v1",
+        "key_provider": "groq",
+        "model": "llama3-70b-8192",
+    },
     "ollama": {
         "name": "Ollama (Llama 3.2 3B)",
         "base_url": "http://127.0.0.1:11434/v1",
@@ -531,7 +543,7 @@ def load_user_state_from_disk(username):
     """Load a specific user's chat history and settings from disk."""
     state_file = os.path.join(USER_DATA_DIR, f"state_{username}.json")
     default_state = {
-        "model": "ollama",
+        "model": "gemini",
         "web_search": False,
         "system_control": True,
         "mysql_enabled": True,
@@ -617,7 +629,7 @@ class SessionStateWrapper:
     """Thread-local proxy to route app_state lookups to the logged-in user."""
     def __init__(self):
         self._default_state = {
-            "model": "ollama",
+            "model": "gemini",
             "web_search": False,
             "system_control": True,
             "mysql_enabled": True,
