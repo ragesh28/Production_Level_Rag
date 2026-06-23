@@ -31,34 +31,40 @@ jobs:
           # Using user's requested model
           ollama pull qwen2.5:7b
 
-      - name: Install Cloudflared
+      - name: Install Ngrok
         run: |
-          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-          sudo dpkg -i cloudflared.deb
+          curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
+          echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
+          sudo apt update && sudo apt install ngrok
 
       - name: Start App, Tunnel & Manage Lifecycle
         env:
+          NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTHTOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # 0. Start Ngrok with the secret token
+          ngrok config add-authtoken $NGROK_AUTHTOKEN
+          
           # 1. Start the web server
           python server.py &
           sleep 3
           
-          # 2. Start Cloudflare Tunnel in background and capture URL
-          cloudflared tunnel --url http://127.0.0.1:5000 > cloudflare.log 2>&1 &
+          # 2. Start Ngrok Tunnel in background and capture URL
+          ngrok http 5000 --log stdout > ngrok.log 2>&1 &
           sleep 8
-          CF_URL=$(grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log)
+          NGROK_URL=$(grep -o 'https://[-a-zA-Z0-9]*\.ngrok-free\.app' ngrok.log | head -1)
           echo "========================================="
           echo "  NeuralRAG is LIVE!"
-          echo "  Your Public URL is: $CF_URL"
+          echo "  Your Public URL is: $NGROK_URL"
           echo "========================================="
           
           # Update README.md with the new URL
-          if [ ! -z "$CF_URL" ]; then
+          if [ ! -z "$NGROK_URL" ]; then
             git pull
             git config --global user.name 'github-actions[bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-            sed -i -E "s|https://[a-zA-Z0-9-]+\.trycloudflare\.com|$CF_URL|g" README.md
+            # Replace any URL that matches ngrok-free.app OR trycloudflare.com
+            sed -i -E "s|https://[a-zA-Z0-9-]+\.(trycloudflare\.com\|ngrok-free\.app)|$NGROK_URL|g" README.md
             git add README.md
             git commit -m "Update Live URL in README"
             git push
