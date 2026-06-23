@@ -3,7 +3,7 @@
 Welcome to NeuralRAG!
 
 ### 🟢 Live Instance Status
-**Live Link:** [https://pending.trycloudflare.com](https://pending.trycloudflare.com)
+**Live Link:** [https://prostores-ripe-nancy-half.trycloudflare.com](https://prostores-ripe-nancy-half.trycloudflare.com)
 *(This link is automatically updated by GitHub Actions every time a new instance starts.)*
 
 ---
