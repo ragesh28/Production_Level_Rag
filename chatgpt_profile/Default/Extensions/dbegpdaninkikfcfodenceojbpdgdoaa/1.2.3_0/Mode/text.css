@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100px;
+    height: fit-content;
+}
+
+
+#prompt-input{
+    width: 100%;
+    border: none;
+    padding: 0% 2%;
+    font-size: 3vw;
+    padding-right: 45px;
+    height: 50px;
+}
+input:focus {
+    outline: none;
+}
+
+
+.btn{
+    font-size: 6vw;
+    padding: 1%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+i{
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+i:hover {
+    transition: all .3s ease-in-out;
+    color:#23bb62;
+}
+
+#output-div{
+    width: 0px;
+    display:none;
+    overflow-y: scroll;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #000000, #ffffff) 1 0 0 0;
+    padding:1.5vw;
+    font-size: 2.2vw;
+    outline: none;
+    resize: none;
+    max-height: 450px;
+}

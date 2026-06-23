@@ -1,0 +1,554 @@
+{
+   "actionTab": {
+      "message": "Action"
+   },
+   "adjective": {
+      "message": "{count, plural, one {Adjective} other {Adjectives}}"
+   },
+   "adverb": {
+      "message": "{count, plural, one {Adverb} other {Adverbs}}"
+   },
+   "antonym": {
+      "message": "{count, plural, one {Antonym} other {Antonyms}}"
+   },
+   "back": {
+      "message": "Back"
+   },
+   "broader": {
+      "message": "{count, plural, one {Broader} other {Broader}}"
+   },
+   "clear": {
+      "message": "Clear"
+   },
+   "close": {
+      "message": "Close"
+   },
+   "conjunction": {
+      "message": "{count, plural, one {Conjunction} other {Conjunctions}}"
+   },
+   "consentAnnounce": {
+      "message": "Power Thesaurus sends only your search terms to get results and uses minimal technical data to run the service. Sharing usage analytics and crash reports is optional — configure "
+   },
+   "consentButtonNo": {
+      "message": "No, thanks. Please uninstall."
+   },
+   "consentButtonYes": {
+      "message": "Got it. Activate Power Thesaurus!"
+   },
+   "consentCheckbox1": {
+      "message": "\u003Cbold>Allow sharing anonymous usage data\u003C/bold> Helps us understand which features are used and where people struggle."
+   },
+   "consentCheckbox2": {
+      "message": "\u003Cbold>Allow sending crash and error reports\u003C/bold> Helps us fix bugs faster. May include stack traces and limited technical context around an error."
+   },
+   "consentListItem1": {
+      "message": "\u003Cbold>Search requests\u003C/bold> When you search or look up a selection, only the term you enter (or select) is sent to our servers to fetch results. No page content or browsing history is collected."
+   },
+   "consentParagraph1": {
+      "message": "To start using the add-on, please review your data choices."
+   },
+   "consentParagraph3": {
+      "message": "You are in control. Turn ON if you want to help us improve the product."
+   },
+   "consentParagraph4": {
+      "message": "You can change these choices anytime in \u003Cbold>Settings → Privacy & Data\u003C/bold>."
+   },
+   "consentParagraphLinks": {
+      "message": "By continuing, you agree to the \u003Clink1>Power Thesaurus Add‑on Privacy Policy\u003C/link1> and \u003Clink2>Terms\u003C/link2>."
+   },
+   "consentPrivacyAndData": {
+      "message": "Privacy & Data"
+   },
+   "consentResultActionOpen": {
+      "message": "Open the Extension"
+   },
+   "consentResultActionSettings": {
+      "message": "Go to Settings"
+   },
+   "consentResultDescription": {
+      "message": "Faster, sharper wording. Right where you write."
+   },
+   "consentResultTitle": {
+      "message": "Welcome to Power Thesaurus for "
+   },
+   "consentSubtitle1": {
+      "message": "What is required to make it work"
+   },
+   "consentSubtitle2": {
+      "message": "Optional sharing (off by default)"
+   },
+   "consentTab": {
+      "message": "Consent"
+   },
+   "consentTitle": {
+      "message": "⚠️ Power Thesaurus isn’t active yet"
+   },
+   "contextMenuAction": {
+      "message": "Search Power Thesaurus for “%s”"
+   },
+   "contextMenuOption1": {
+      "message": "Context menu search"
+   },
+   "contextMenuOption2": {
+      "message": "— right-click any word to find synonyms"
+   },
+   "contextMenuOptionDisabled": {
+      "message": "Disabled"
+   },
+   "contextMenuOptionSearch": {
+      "message": "Search"
+   },
+   "contextMenuOptionWindow": {
+      "message": "Window"
+   },
+   "controlsHintDescription": {
+      "message": "Click & hold to search."
+   },
+   "controlsHintTitle": {
+      "message": "Click on results to copy."
+   },
+   "copyright": {
+      "message": "{name} {version} © 2012–{now, date, ::yyyy}"
+   },
+   "correctedFromDescription": {
+      "message": "\u003Ctext>{correctedFrom}\u003C/text> is not in our thesaurus"
+   },
+   "correctedFromTitle": {
+      "message": "Results for {name}"
+   },
+   "definition": {
+      "message": "{count, plural, one {Definition} other {Definitions}}"
+   },
+   "errorForbiddenDescription": {
+      "message": "VPN or IP restriction.\nEmail \u003Clink>{email}\u003C/link> with your IP."
+   },
+   "errorForbiddenTitle": {
+      "message": "Results temporarily unavailable"
+   },
+   "errorNetworkDescription": {
+      "message": "Please check your internet connection."
+   },
+   "errorNetworkTitle": {
+      "message": "Connection error"
+   },
+   "errorRateLimitDescription": {
+      "message": "Please try again later."
+   },
+   "errorRateLimitTitle": {
+      "message": "Too many requests"
+   },
+   "errorServerDescription": {
+      "message": "Server error. Please try again later."
+   },
+   "errorServerTitle": {
+      "message": "Service temporarily unavailable"
+   },
+   "extensionDescription": {
+      "message": "Use the power of synonyms by button in toolbar, right-click or by word selection on any page."
+   },
+   "extensionName": {
+      "message": "Power Thesaurus"
+   },
+   "extensionNameExtension": {
+      "message": "Power Thesaurus Extension"
+   },
+   "extensionShortName": {
+      "message": "PT"
+   },
+   "extensionVersion": {
+      "message": "v{version} · "
+   },
+   "feedbackAction": {
+      "message": "Send feedback"
+   },
+   "feedbackCheckbox": {
+      "message": "I don't want to receive responses"
+   },
+   "feedbackEmail": {
+      "message": "Your email"
+   },
+   "feedbackEmailError": {
+      "message": "Invalid email. Please check and try again."
+   },
+   "feedbackEmailPlaceholder": {
+      "message": "Your email"
+   },
+   "feedbackMessage": {
+      "message": "Your feedback message"
+   },
+   "feedbackMessageLength": {
+      "message": "{length} {length, plural, one {symbol} other {symbols}}"
+   },
+   "feedbackMessagePlaceholder": {
+      "message": "type your feedback"
+   },
+   "feedbackResultAction": {
+      "message": "Close tab"
+   },
+   "feedbackResultDescription": {
+      "message": "We value your input and will closely review it to improve Power Thesaurus. We appreciate your help in our pursuit of excellence."
+   },
+   "feedbackResultTitle": {
+      "message": "Thank you for your feedback!"
+   },
+   "feedbackSubscriptionTitle": {
+      "message": "PRO Support"
+   },
+   "feedbackTab": {
+      "message": "Feedback"
+   },
+   "feedbackTitle": {
+      "message": "Feedback"
+   },
+   "idiom": {
+      "message": "{count, plural, one {Idiom} other {Idioms}}"
+   },
+   "interjection": {
+      "message": "{count, plural, one {Interjection} other {Interjections}}"
+   },
+   "listOrderOption1": {
+      "message": "Custom list order"
+   },
+   "listOrderOption2": {
+      "message": " — organize results your way"
+   },
+   "narrower": {
+      "message": "{count, plural, one {Narrower} other {Narrower}}"
+   },
+   "noun": {
+      "message": "{count, plural, one {Noun} other {Nouns}}"
+   },
+   "optionsTab": {
+      "message": "Settings"
+   },
+   "phrasalVerb": {
+      "message": "{count, plural, one {Phrasal verb} other {Phrasal verbs}}"
+   },
+   "phrase": {
+      "message": "{count, plural, one {Phrase} other {Phrases}}"
+   },
+   "popupIconDescription": {
+      "message": "Show icon when the text is selected"
+   },
+   "popupIconTitle": {
+      "message": "Pop-up icon"
+   },
+   "popupOption1": {
+      "message": "Quick pop-up on word selection"
+   },
+   "popupOption2": {
+      "message": "— look up synonyms instantly"
+   },
+   "popupOptionDisabled": {
+      "message": "Disabled"
+   },
+   "popupOptionIcon": {
+      "message": "Icon"
+   },
+   "popupOptionPlacement": {
+      "message": "Placement — choose where it appears. Auto-adjusts if needed."
+   },
+   "popupOptionPlacementAboveBelow": {
+      "message": "Above or below"
+   },
+   "popupOptionPlacementAuto": {
+      "message": "Auto"
+   },
+   "popupOptionPlacementRightLeft": {
+      "message": "Right or left"
+   },
+   "popupOptionWindow": {
+      "message": "Window"
+   },
+   "popupToggle": {
+      "message": "Toggle Pop-up"
+   },
+   "preposition": {
+      "message": "{count, plural, one {Preposition} other {Prepositions}}"
+   },
+   "privacyButtonBack": {
+      "message": "Back to Settings"
+   },
+   "privacyCheckbox1": {
+      "message": "\u003Cbold>Share anonymous usage data\u003C/bold>: Events like feature use, performance metrics, device and extension info."
+   },
+   "privacyCheckbox2": {
+      "message": "\u003Cbold>Send crash and error reports\u003C/bold>: Stack traces and technical context only. No page content, browsing history or personal text."
+   },
+   "privacyListItem1": {
+      "message": "\u003Cbold>Search requests\u003C/bold> to Power Thesaurus servers to fetch results. No page content or browsing history"
+   },
+   "privacyListItem2": {
+      "message": "\u003Cbold>Technical basics\u003C/bold> for security and reliability."
+   },
+   "privacyOptionsDescription": {
+      "message": "Power Thesaurus only processes your search terms. No personal data is collected. Sharing crash reports is optional and helps us keep the extension stable."
+   },
+   "privacyOptionsTitle": {
+      "message": "Your Privacy Matters ✅"
+   },
+   "privacyParagraph2": {
+      "message": "Changes take effect immediately."
+   },
+   "privacySubtitle1": {
+      "message": "Required for core features"
+   },
+   "privacySubtitle2": {
+      "message": "Optional sharing"
+   },
+   "privacyTab": {
+      "message": "Privacy & Data"
+   },
+   "privacyTitle": {
+      "message": "Privacy & Data"
+   },
+   "pronoun": {
+      "message": "{count, plural, one {Pronoun} other {Pronouns}}"
+   },
+   "related": {
+      "message": "{count, plural, one {Related} other {Related}}"
+   },
+   "reportAction": {
+      "message": "Send report"
+   },
+   "reportEmail": {
+      "message": "Email address where we can reply to you"
+   },
+   "reportEmailPlaceholder": {
+      "message": "Your email"
+   },
+   "reportMessage": {
+      "message": "Provide the details"
+   },
+   "reportMessageLength": {
+      "message": "{length} {length, plural, one {symbol} other {symbols}}"
+   },
+   "reportMessagePlaceholder": {
+      "message": "Your message"
+   },
+   "reportNotAppearingPopup": {
+      "message": "Pop-up does not appear on the page"
+   },
+   "reportOther": {
+      "message": "Other"
+   },
+   "reportResultAction": {
+      "message": "Close tab"
+   },
+   "reportResultDescription": {
+      "message": "Your report is received and under review. Thank you for your submission!"
+   },
+   "reportResultTitle": {
+      "message": "Thank you for your feedback!"
+   },
+   "reportTab": {
+      "message": "Report"
+   },
+   "reportTitle": {
+      "message": "What is your type of issue?"
+   },
+   "reportWordReplacingNotWorking": {
+      "message": "Replacing words on the page does not work"
+   },
+   "rhyme": {
+      "message": "{count, plural, one {Rhyme} other {Rhymes}}"
+   },
+   "searchPlaceholder": {
+      "message": "Search"
+   },
+   "searchPlaceholderLong": {
+      "message": "Search for a word or phrase..."
+   },
+   "sentence": {
+      "message": "{count, plural, one {Sentence} other {Sentences}}"
+   },
+   "signIn": {
+      "message": "Log in"
+   },
+   "signOut": {
+      "message": "Log out"
+   },
+   "similar": {
+      "message": "{count, plural, one {Similar} other {Similar}}"
+   },
+   "soundsLike": {
+      "message": "{count, plural, one {Sound like} other {Sound like}}"
+   },
+   "storeReviewAction": {
+      "message": "Rate it 👍"
+   },
+   "storeReviewSubtitle": {
+      "message": "Your rating helps us improve and makes it easier for others to find better words."
+   },
+   "storeReviewTitle": {
+      "message": "Do you like Power Thesaurus? ❤️"
+   },
+   "subscriptionActive": {
+      "message": "PRO is active"
+   },
+   "subscriptionAnnual": {
+      "message": "Annual plan"
+   },
+   "subscriptionDaily": {
+      "message": "Daily plan"
+   },
+   "subscriptionManagementAction": {
+      "message": "Manage PRO"
+   },
+   "subscriptionManagementDescription": {
+      "message": "{plan}. The next payment of \u003Cvalue>{price}\u003C/value> will be charged on \u003Cvalue>{date, date, ::MMM dd, yyyy}\u003C/value>"
+   },
+   "subscriptionMonthly": {
+      "message": "Monthly plan"
+   },
+   "subscriptionOfferAction": {
+      "message": "Join PRO"
+   },
+   "subscriptionOfferDescription": {
+      "message": "Get more content, ad-free experience, advanced features designed to boost your productivity and our development efforts."
+   },
+   "subscriptionOfferTitle": {
+      "message": "Upgrade to PRO 🚀"
+   },
+   "subscriptionRestriction": {
+      "message": "PRO only"
+   },
+   "subscriptionUnknown": {
+      "message": "Unknown plan"
+   },
+   "synonym": {
+      "message": "{count, plural, one {Synonym} other {Synonyms}}"
+   },
+   "tabTitleTemplate": {
+      "message": "{name} - %s"
+   },
+   "themeModeAuto": {
+      "message": "System"
+   },
+   "themeModeDark": {
+      "message": "On"
+   },
+   "themeModeLight": {
+      "message": "Off"
+   },
+   "themeModeOption1": {
+      "message": "Dark mode"
+   },
+   "themeModeOption2": {
+      "message": "— easier on the eyes and the mood 🌙"
+   },
+   "thesaurusCopySuccess": {
+      "message": "Copied"
+   },
+   "thesaurusDefinitionList": {
+      "message": "{list}: "
+   },
+   "thesaurusDefinitionUsagesWrapper": {
+      "message": "“{name}”"
+   },
+   "thesaurusExtensionSectionTitle": {
+      "message": "{total} {list}"
+   },
+   "thesaurusMore": {
+      "message": "View all"
+   },
+   "thesaurusNotFound": {
+      "message": "No results"
+   },
+   "thesaurusTitle": {
+      "message": "{list}"
+   },
+   "thesaurusTitleEditableAction": {
+      "message": "Use term"
+   },
+   "thesaurusTitleLists": {
+      "message": "Lists"
+   },
+   "thesaurusTitleStaticAction": {
+      "message": "Copy term"
+   },
+   "thesaurusTitleWithHistory": {
+      "message": "{name} / {list}"
+   },
+   "unboardingChromeListItem1": {
+      "message": "Click the 🧩 \u003Cbold>Extensions\u003C/bold> button"
+   },
+   "unboardingChromeListItem2": {
+      "message": "Find \u003Cbold>Power Thesaurus\u003C/bold>"
+   },
+   "unboardingChromeListItem3": {
+      "message": "Click 📌 \u003Cbold>Pin\u003C/bold>"
+   },
+   "unboardingFirefoxAdditional": {
+      "message": "If you do not see it: right-click the \u003Cbold>Toolbar\u003C/bold>. \nSelect \u003Cbold>Customize Toolbar\u003C/bold>. \nDrag \u003Cbold>Power Thesaurus\u003C/bold> to the toolbar."
+   },
+   "unboardingFirefoxListItem1": {
+      "message": "Click the 🧩 \u003Cbold>Extensions\u003C/bold> button"
+   },
+   "unboardingFirefoxListItem2": {
+      "message": "Next to \u003Cbold>Power Thesaurus\u003C/bold>, choose ⚙️ \nand then 📌 Pin to Toolbar"
+   },
+   "unboardingLogin": {
+      "message": "Log in"
+   },
+   "unboardingLoginAdditional": {
+      "message": "Access your account, PRO features, and device sync."
+   },
+   "unboardingLoginTitle": {
+      "message": "Log in for sync and PRO"
+   },
+   "unboardingPinSubtitle": {
+      "message": "Keep Power Thesaurus one click away."
+   },
+   "unboardingPinTitle": {
+      "message": "Pin the button"
+   },
+   "unboardingPrivacyDescription1": {
+      "message": "Power Thesaurus sends only your search terms to get results."
+   },
+   "unboardingPrivacyDescription2": {
+      "message": "Sharing of usage analytics and crash reports is optional and can be controlled in \u003Cbold>Settings → Privacy & Data\u003C/bold>."
+   },
+   "unboardingPrivacyTitle": {
+      "message": "Your Privacy"
+   },
+   "unboardingSafariListItem1": {
+      "message": "Open \u003Cbold>View → Customize Toolbar\u003C/bold>."
+   },
+   "unboardingSafariListItem2": {
+      "message": "Drag the \u003Cbold>Power Thesaurus\u003C/bold> icon to the toolbar."
+   },
+   "unboardingSubtitle": {
+      "message": "Faster, sharper wording. Right where you write."
+   },
+   "unboardingTitle": {
+      "message": "Welcome to Power Thesaurus for {browser}!"
+   },
+   "verb": {
+      "message": "{count, plural, one {Verb} other {Verbs}}"
+   },
+   "websiteAboutLink": {
+      "message": "About"
+   },
+   "websiteExamplesLink": {
+      "message": "Examples"
+   },
+   "websitePrivacyLink": {
+      "message": "Privacy & Cookie Policy"
+   },
+   "websiteSubscriptionLink": {
+      "message": "Get PRO"
+   },
+   "websiteTermsLink": {
+      "message": "Terms"
+   },
+   "websiteWebVersion": {
+      "message": "Web Version"
+   },
+   "websiteWebsiteLink": {
+      "message": "Website"
+   },
+   "welcomeTab": {
+      "message": "Welcome"
+   }
+}

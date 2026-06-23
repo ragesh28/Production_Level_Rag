@@ -1,0 +1,151 @@
+:root {
+    --bg: #36454F;
+    --white: #ffffff;
+    --icon: #ffffff;
+    --iconHover:#ecdd4e;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg);
+}
+.box{
+    text-align: left;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    white-space: nowrap;
+    font-size: 0;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+#container {
+    text-align: left;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    text-align: center;
+}
+
+.valign-child {
+    height: 100%;
+}
+
+.valign-child, .valign {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.fa{
+    font-size: 25vw;
+}
+#box1{
+    left: 0;
+    top: 0;
+    background: radial-gradient(circle at bottom right, transparent 25%, var(--bg) 0px);
+}
+
+#box2 {
+    right: 0;
+    top: 0;
+    background: radial-gradient(circle at bottom left, transparent 25%, var(--bg) 0px);
+}
+
+#box3 {
+    left: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, transparent 25%, var(--bg) 0px);
+}
+
+#box4 {
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top left, transparent 25%, var(--bg) 0px);
+}
+#icon4{
+    font-size: 26vw;
+}
+
+#box5{
+    z-index: 1000;
+    display: flex;
+    border-radius: 50%;
+}
+#icon5{
+    font-size: 25vw;
+}
+
+.icons{
+    z-index: 1000;
+    cursor: pointer;
+    justify-content: center;
+    margin:auto;
+    transition: all .2s ease-in-out;
+    color:var(--icon)
+}
+
+
+.container {
+    /* background:black; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.icons:hover{
+    color:var(--iconHover);
+    transform: scale(1.3);
+}
+
+.box:hover {
+    transform: scale(1.3);
+}
+
+
+
+.heart {
+    animation: pulse 3s linear infinite;
+}
+
+
+
+
+
+@keyframes pulse {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    
+    10% {
+        transform: rotate(0deg) scale(1.3);
+    }
+    20% {
+        transform: rotate(0deg) scale(0.9);
+    }
+    30% {
+        transform: rotate(0deg) scale(1.2);
+    }
+    40% {
+        transform: rotate(0deg) scale(0.9);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}

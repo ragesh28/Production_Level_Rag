@@ -1,0 +1,14 @@
+2026/05/29-07:10:05.389 1798 Reusing MANIFEST C:\Users\Ragesh.l\Documents\VS code\RAG_PRODUCTION _LEVEL\chatgpt_profile_admin\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/29-07:10:05.396 1798 Recovering log #39
+2026/05/29-07:10:05.397 1798 Level-0 table #41: started
+2026/05/29-07:10:05.404 1798 Level-0 table #41: 14537 bytes OK
+2026/05/29-07:10:05.410 1798 Delete type=0 #39
+2026/05/29-07:10:05.411 3454 Compacting 4@0 + 1@1 files
+2026/05/29-07:10:05.420 3454 Generated table #43@0: 13 keys, 14662 bytes
+2026/05/29-07:10:05.421 3454 Compacted 4@0 + 1@1 files => 14662 bytes
+2026/05/29-07:10:05.421 3454 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/29-07:10:05.423 3454 Delete type=2 #30
+2026/05/29-07:10:05.423 3454 Delete type=2 #32
+2026/05/29-07:10:05.423 3454 Delete type=2 #35
+2026/05/29-07:10:05.423 3454 Delete type=2 #38
+2026/05/29-07:10:05.424 3454 Delete type=2 #41

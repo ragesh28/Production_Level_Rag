@@ -1,0 +1,277 @@
+/* ============================================================
+   NeuralRAG — Pure CSS Animated Logo
+   A futuristic hexagonal constellation with orbiting particles
+   ============================================================ */
+
+.nr-logo {
+    --logo-accent1: #6366f1;
+    --logo-accent2: #8b5cf6;
+    --logo-accent3: #ec4899;
+    --logo-glow: rgba(99, 102, 241, 0.4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Small logo (topbar, 36x36) --- */
+.nr-logo.sm {
+    width: 36px;
+    height: 36px;
+}
+/* --- Large logo (welcome screen, 100x100) --- */
+.nr-logo.lg {
+    width: 100px;
+    height: 100px;
+}
+
+/* ============================================================
+   CORE HEXAGON (Center piece)
+   ============================================================ */
+.nr-logo .hex-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+.nr-logo.sm .hex-core {
+    width: 16px; height: 16px;
+}
+.nr-logo.lg .hex-core {
+    width: 40px; height: 40px;
+}
+
+/* Hexagon shape via clip-path */
+.nr-logo .hex-shape {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--logo-accent1), var(--logo-accent2), var(--logo-accent3));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hexPulse 3s ease-in-out infinite;
+    position: relative;
+}
+
+/* Inner glow overlay on hex */
+.nr-logo .hex-shape::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent 60%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+@keyframes hexPulse {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.08); filter: brightness(1.2); }
+}
+
+/* ============================================================
+   ORBIT RINGS (Two rotating elliptical rings)
+   ============================================================ */
+.nr-logo .orbit {
+    position: absolute;
+    top: 50%; left: 50%;
+    border: 1px solid;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+/* Ring 1 — indigo, tilted */
+.nr-logo .orbit-1 {
+    border-color: rgba(99, 102, 241, 0.3);
+    animation: orbitSpin1 6s linear infinite;
+}
+.nr-logo.sm .orbit-1 {
+    width: 28px; height: 28px;
+    margin-top: -14px; margin-left: -14px;
+}
+.nr-logo.lg .orbit-1 {
+    width: 76px; height: 76px;
+    margin-top: -38px; margin-left: -38px;
+}
+
+/* Ring 2 — magenta, tilted other way */
+.nr-logo .orbit-2 {
+    border-color: rgba(236, 72, 153, 0.3);
+    animation: orbitSpin2 8s linear infinite;
+}
+.nr-logo.sm .orbit-2 {
+    width: 32px; height: 18px;
+    margin-top: -9px; margin-left: -16px;
+}
+.nr-logo.lg .orbit-2 {
+    width: 88px; height: 50px;
+    margin-top: -25px; margin-left: -44px;
+}
+
+@keyframes orbitSpin1 {
+    from { transform: rotateX(60deg) rotateZ(0deg); }
+    to   { transform: rotateX(60deg) rotateZ(360deg); }
+}
+@keyframes orbitSpin2 {
+    from { transform: rotateX(70deg) rotateY(30deg) rotateZ(0deg); }
+    to   { transform: rotateX(70deg) rotateY(30deg) rotateZ(-360deg); }
+}
+
+/* ============================================================
+   PARTICLES (Orbiting dots on the rings)
+   ============================================================ */
+.nr-logo .particle {
+    position: absolute;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Particle 1 — on orbit 1 */
+.nr-logo .p1 {
+    background: var(--logo-accent1);
+    box-shadow: 0 0 6px var(--logo-accent1), 0 0 12px rgba(99,102,241,0.3);
+    animation: particleOrbit1 6s linear infinite;
+}
+.nr-logo.sm .p1 { width: 4px; height: 4px; }
+.nr-logo.lg .p1 { width: 8px; height: 8px; }
+
+/* Particle 2 — on orbit 2 */
+.nr-logo .p2 {
+    background: var(--logo-accent3);
+    box-shadow: 0 0 6px var(--logo-accent3), 0 0 12px rgba(236,72,153,0.3);
+    animation: particleOrbit2 8s linear infinite;
+}
+.nr-logo.sm .p2 { width: 3px; height: 3px; }
+.nr-logo.lg .p2 { width: 7px; height: 7px; }
+
+/* Particle 3 — floating accent */
+.nr-logo .p3 {
+    background: var(--logo-accent2);
+    box-shadow: 0 0 6px var(--logo-accent2), 0 0 10px rgba(139,92,246,0.3);
+    animation: particleFloat 4s ease-in-out infinite;
+}
+.nr-logo.sm .p3 { width: 3px; height: 3px; }
+.nr-logo.lg .p3 { width: 6px; height: 6px; }
+
+@keyframes particleOrbit1 {
+    0%   { top: 0%;  left: 50%;  transform: translate(-50%, -50%); }
+    25%  { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+    50%  { top: 100%;left: 50%;  transform: translate(-50%, -50%); }
+    75%  { top: 50%; left: 0%;   transform: translate(-50%, -50%); }
+    100% { top: 0%;  left: 50%;  transform: translate(-50%, -50%); }
+}
+@keyframes particleOrbit2 {
+    0%   { top: 50%; left: 0%;   transform: translate(-50%, -50%); }
+    25%  { top: 0%;  left: 50%;  transform: translate(-50%, -50%); }
+    50%  { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+    75%  { top: 100%;left: 50%;  transform: translate(-50%, -50%); }
+    100% { top: 50%; left: 0%;   transform: translate(-50%, -50%); }
+}
+@keyframes particleFloat {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0); opacity: 0.7; }
+    50%      { transform: translate(-50%, -50%) translateY(-4px); opacity: 1; }
+}
+
+/* ============================================================
+   CONNECTION LINES (Faint lines radiating from center)
+   ============================================================ */
+.nr-logo .conn-lines {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nr-logo.sm .conn-lines { width: 34px; height: 34px; }
+.nr-logo.lg .conn-lines { width: 90px; height: 90px; }
+
+.nr-logo .conn-line {
+    position: absolute;
+    top: 50%; left: 50%;
+    height: 1px;
+    transform-origin: left center;
+    animation: connFade 3s ease-in-out infinite;
+}
+
+.nr-logo.sm .conn-line { width: 12px; }
+.nr-logo.lg .conn-line { width: 35px; }
+
+.nr-logo .conn-line:nth-child(1) { background: linear-gradient(90deg, rgba(99,102,241,0.5), transparent); transform: rotate(0deg); }
+.nr-logo .conn-line:nth-child(2) { background: linear-gradient(90deg, rgba(139,92,246,0.5), transparent); transform: rotate(60deg); animation-delay: 0.5s; }
+.nr-logo .conn-line:nth-child(3) { background: linear-gradient(90deg, rgba(236,72,153,0.5), transparent); transform: rotate(120deg); animation-delay: 1s; }
+.nr-logo .conn-line:nth-child(4) { background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent); transform: rotate(180deg); animation-delay: 1.5s; }
+.nr-logo .conn-line:nth-child(5) { background: linear-gradient(90deg, rgba(139,92,246,0.4), transparent); transform: rotate(240deg); animation-delay: 2s; }
+.nr-logo .conn-line:nth-child(6) { background: linear-gradient(90deg, rgba(236,72,153,0.4), transparent); transform: rotate(300deg); animation-delay: 2.5s; }
+
+@keyframes connFade {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.9; }
+}
+
+/* ============================================================
+   AMBIENT GLOW (Behind the whole logo)
+   ============================================================ */
+.nr-logo .logo-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--logo-glow), transparent 70%);
+    animation: glowPulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+.nr-logo.sm .logo-glow { width: 40px; height: 40px; }
+.nr-logo.lg .logo-glow { width: 120px; height: 120px; }
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50%      { opacity: 0.8; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* ============================================================
+   SCANNER LINE (The premium tech feel)
+   ============================================================ */
+.nr-logo .scanner {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, transparent, rgba(99,102,241,0.6), transparent);
+    animation: scanLine 4s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: 1px;
+}
+.nr-logo.sm .scanner { width: 1px; height: 36px; }
+.nr-logo.lg .scanner { width: 2px; height: 100px; }
+
+@keyframes scanLine {
+    0%   { transform: translateX(-50%) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.6; }
+    50%  { transform: translateX(-50%) rotate(180deg); opacity: 0.6; }
+    90%  { opacity: 0.6; }
+    100% { transform: translateX(-50%) rotate(360deg); opacity: 0; }
+}
+
+/* ============================================================
+   FAVICON — Extra tiny version
+   ============================================================ */
+.nr-logo.xs {
+    width: 20px;
+    height: 20px;
+}
+.nr-logo.xs .hex-core { width: 10px; height: 10px; }
+.nr-logo.xs .orbit-1 { width: 16px; height: 16px; margin-top: -8px; margin-left: -8px; }
+.nr-logo.xs .orbit-2 { width: 18px; height: 10px; margin-top: -5px; margin-left: -9px; }
+.nr-logo.xs .p1 { width: 2px; height: 2px; }
+.nr-logo.xs .p2 { width: 2px; height: 2px; }
+.nr-logo.xs .p3 { display: none; }
+.nr-logo.xs .conn-lines { display: none; }
+.nr-logo.xs .logo-glow { width: 22px; height: 22px; }
+.nr-logo.xs .scanner { display: none; }
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .nr-logo .hex-shape,
+    .nr-logo .orbit,
+    .nr-logo .particle,
+    .nr-logo .conn-line,
+    .nr-logo .logo-glow,
+    .nr-logo .scanner {
+        animation: none !important;
+    }
+}

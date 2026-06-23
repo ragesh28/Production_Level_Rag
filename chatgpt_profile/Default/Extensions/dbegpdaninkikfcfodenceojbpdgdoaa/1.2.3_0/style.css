@@ -1,0 +1,48 @@
+
+textarea::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+} */
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(90, 90, 90);
+    /* outline: 1px solid slategrey; */
+}
+
+
+textarea::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+}
+
+textarea::-webkit-scrollbar:hover {
+    cursor: pointer;
+}
+
+::placeholder {
+    opacity: .7;
+}
+
+.loading {
+    background-color: #ffffff00;
+    /* background-image: url("https://4.bp.blogspot.com/-wu9B907qp1E/WKMnQknPjzI/AAAAAAAAIoo/YSXfD6TOz_EhNI22gewDnvcTEhh5lv3BwCLcB/s1600/brain_neurons_firing_300_clr_10714.gif");
+    background-image: url("https://i.pinimg.com/originals/8d/c4/68/8dc468e9a6bfee504dcce2af8ce6950c.gif"); 
+    
+    
+    background-image: url("https://i.gifer.com/origin/7e/7e0bcff70452c2eca7f1250938b226c3.gif"); */
+    background-image: url("https://64.media.tumblr.com/5e6d2828686423d68831e3fc4c8f322c/tumblr_o2rna9xKc21rv33k2o6_500.gif");
+    
+    
+
+
+    background-size: 7.8vw;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+kbd{
+    font-size: 14px;
+    font-weight: bold;
+}

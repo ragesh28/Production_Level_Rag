@@ -1,0 +1,6 @@
+my name ragesh and im like hacking
+venv\Scripts\activate
+
+python init_db.py      
+
+streamlit run app.py 0

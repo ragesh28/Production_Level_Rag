@@ -1,0 +1,40 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.plasmo.f86e3ae6.png",
+         "16": "icon16.plasmo.f58704f6.png",
+         "32": "icon32.plasmo.c2d2aa82.png",
+         "48": "icon48.plasmo.8db365f9.png",
+         "64": "icon64.plasmo.a671a8cd.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "API Hover",
+   "background": {
+      "service_worker": "static/background/index.js"
+   },
+   "content_scripts": [ {
+      "css": [  ],
+      "js": [ "overlay.98c56071.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "description": "Hover to see API calls tied to your interactions.",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icon128.plasmo.f86e3ae6.png",
+      "16": "icon16.plasmo.f58704f6.png",
+      "32": "icon32.plasmo.c2d2aa82.png",
+      "48": "icon48.plasmo.8db365f9.png",
+      "64": "icon64.plasmo.a671a8cd.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxNlHBS9mpn4phUOKOfyJDG/QHLeVujXZXzhLC52j5zeqSBGA6urdXGsZg9m4gMbmrCGSX4MdxuuaDWxlJdZrGqEXkJ7eJo1czWewnXBBuvUf/5kb89B0VPjft/e6xlqNDe4DRe+QMb+Tb/FWGoi3wzryz6+4oFSufOzK7GzUDhbWbjuTbD9yynkpOjU3gMuSEeq7c3Hgdb8qTJksSp+j4PvHTIu0Bmx/hSmuzsE5TmigZh7PFWOj06vG7o66Q/L1wgaTsAMz+h8V//9iNFguwyYeLDNWsuaUJ/K7K/SHrMzwuPwlDXKDMg9V0ZEm9Xc3VFHkc9Zd6c74Nxac+8HdnwIDAQAB",
+   "manifest_version": 3,
+   "name": "API Hover",
+   "permissions": [ "scripting", "storage", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.2",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "assets/icon.png", "assets/fonts/Geist-Regular.woff2", "assets/fonts/Geist-SemiBold.woff2", "assets/fonts/GeistMono-Regular.woff2" ]
+   } ]
+}

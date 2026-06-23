@@ -1,0 +1,18 @@
+2026/05/29-08:37:35.829 5340 Reusing MANIFEST C:\Users\Ragesh.l\Documents\VS code\RAG_PRODUCTION _LEVEL\chatgpt_profile_ragesh\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/29-08:37:35.838 5340 Recovering log #20
+2026/05/29-08:37:35.847 5340 Reusing old log C:\Users\Ragesh.l\Documents\VS code\RAG_PRODUCTION _LEVEL\chatgpt_profile_ragesh\Default\Local Storage\leveldb/000020.log 
+2026/05/29-08:38:35.865 4d04 Level-0 table #24: started
+2026/05/29-08:38:35.879 4d04 Level-0 table #24: 14899 bytes OK
+2026/05/29-08:38:35.881 4d04 Delete type=0 #20
+2026/05/29-09:26:38.533 4d04 Level-0 table #26: started
+2026/05/29-09:26:38.543 4d04 Level-0 table #26: 12442 bytes OK
+2026/05/29-09:26:38.545 4d04 Delete type=0 #23
+2026/05/29-09:26:38.546 4d04 Compacting 4@0 + 1@1 files
+2026/05/29-09:26:38.561 4d04 Generated table #27@0: 32 keys, 288585 bytes
+2026/05/29-09:26:38.561 4d04 Compacted 4@0 + 1@1 files => 288585 bytes
+2026/05/29-09:26:38.562 4d04 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/29-09:26:38.563 4d04 Delete type=2 #16
+2026/05/29-09:26:38.563 4d04 Delete type=2 #18
+2026/05/29-09:26:38.563 4d04 Delete type=2 #21
+2026/05/29-09:26:38.563 4d04 Delete type=2 #24
+2026/05/29-09:26:38.563 4d04 Delete type=2 #26

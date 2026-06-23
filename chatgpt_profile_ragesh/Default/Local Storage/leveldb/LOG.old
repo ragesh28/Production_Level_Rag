@@ -1,0 +1,6 @@
+2026/05/29-07:01:16.618 4160 Reusing MANIFEST C:\Users\Ragesh.l\Documents\VS code\RAG_PRODUCTION _LEVEL\chatgpt_profile_ragesh\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/29-07:01:16.625 4160 Recovering log #17
+2026/05/29-07:01:16.630 4160 Reusing old log C:\Users\Ragesh.l\Documents\VS code\RAG_PRODUCTION _LEVEL\chatgpt_profile_ragesh\Default\Local Storage\leveldb/000017.log 
+2026/05/29-07:02:16.655 39f0 Level-0 table #21: started
+2026/05/29-07:02:16.666 39f0 Level-0 table #21: 14703 bytes OK
+2026/05/29-07:02:16.669 39f0 Delete type=0 #17

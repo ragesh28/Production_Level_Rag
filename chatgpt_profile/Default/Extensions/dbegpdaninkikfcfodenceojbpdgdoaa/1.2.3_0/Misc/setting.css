@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100px;
+    user-select: none;
+}
+
+
+#title {
+    width: 100%;
+    border: none;
+    padding: 2% 5%;
+    font-size: 10vw;
+    font-weight: bold;
+    
+}
+
+input:focus {
+    outline: none;
+}
+
+
+.btn {
+    padding: 3%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-size: 10vw;
+}
+
+i {
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+i:hover {
+    transition: all .3s ease-in-out;
+    color: rgb(223, 77, 40);
+}
+
+#info-div {
+    width: 275px;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #ff8f8f, #ffffff) 1 0 0 0;
+    padding: 3%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.setting-section{
+    width: 100%;
+    margin-bottom: 3%;
+}
+.section-heading{
+    width: auto;
+
+}
+.section-icon{
+    margin-left: 5px;
+}
+.section-input{
+    width: 94vw;
+        border: none;
+}
+.section-title{
+    width: 100%;
+}
+.section-paragraph{
+    width: 100%;
+}
+
+#token-input {
+
+    padding: 3vw 2vw;
+    background: #c7c7c777;
+}
+
+input:focus {
+    outline: none;
+}
+
+.radio-input{
+    width: 10vw;
+}

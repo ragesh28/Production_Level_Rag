@@ -1,0 +1,5 @@
+This addon uses the following open-source JavaScript libraries:
+
+jszip.js: https://github.com/Stuk/jszip/archive/refs/tags/v3.10.1.zip >> jszip-3.10.1 >> dist >> jszip.js
+msc-script.js: https://github.com/brijeshb42/medium-style-confirm/archive/refs/tags/0.4.6.zip >> medium-style-confirm-0.4.6 >> msc-script.js
+msc-style.css: https://github.com/brijeshb42/medium-style-confirm/archive/refs/tags/0.4.6.zip >> medium-style-confirm-0.4.6 >> msc-style.css

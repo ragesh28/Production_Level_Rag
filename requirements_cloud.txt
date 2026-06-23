@@ -1,0 +1,16 @@
+flask
+flask-cors
+langchain==0.3.27
+langchain-community==0.3.30
+langchain-core==0.3.82
+langchain-google-genai
+langchain-openai
+chromadb
+fastembed==0.3.4
+pypdf==5.1.0
+python-dotenv
+ddgs
+flashrank
+pandas
+openpyxl
+matplotlib

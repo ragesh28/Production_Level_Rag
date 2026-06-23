@@ -1,0 +1,78 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.plasmo.5308f6ba.png",
+         "16": "icon16.plasmo.12e837fb.png",
+         "32": "icon32.plasmo.468e3ee0.png",
+         "48": "icon48.plasmo.a7a09c71.png",
+         "64": "icon64.plasmo.6419b4b8.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "chrome@powerthesaurus.org",
+   "background": {
+      "service_worker": "static/background/index.js"
+   },
+   "content_scripts": [ {
+      "css": [  ],
+      "js": [ "auth.da3477cc.js" ],
+      "matches": [ "*://*.powerthesaurus.org/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [  ],
+      "js": [ "keepalive.e2dc61cf.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "css": [  ],
+      "js": [ "selectionIframe.20292347.js" ],
+      "match_about_blank": true,
+      "match_origin_as_fallback": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "systemFonts.449fc473.css", "fonts.56096319.css" ],
+      "js": [ "selectionStart.c53f0e20.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "selection.7fb2fa62.css", "tabs/consent.b42bcbc0.css", "tabs/feedback.7e80d098.css" ],
+      "js": [ "selection.3fa02834.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' https://api.powerthesaurus.org/ https://www.google-analytics.com/ https://sentry.radyushin.com/ https://www.powerthesaurus.org/"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "homepage_url": "https://www.powerthesaurus.org",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icon128.plasmo.5308f6ba.png",
+      "16": "icon16.plasmo.12e837fb.png",
+      "32": "icon32.plasmo.468e3ee0.png",
+      "48": "icon48.plasmo.a7a09c71.png",
+      "64": "icon64.plasmo.6419b4b8.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1cWY1j5n3UO210MsuYw2S73wER3CTcQUBoCM1aax2zggnnfDcjQQuBw8uwSHByVKvHOz9x2A4eARKmbdpKChnI2jwBEoO+VDT+4lNopSsNp4CSP3ovF2Aep06JVChDSH9GC8miMkQsRaQmHcHTyXVMqazDstZlQpiAUqvVnwS3KZvTd8a1o9B8mn3lr63uHpsLEfRWE7/HQVE9IGJGYFo8uwHW8Q9XJbCI+I74oS2f+Y5oMRzV4GTzGl+souq485wLId6zmT9lPBd3mILZDkLoAgJ27fElkqnYfTi/GxqrEuHLjfoTDVnY/q6RtbSzB1yLqCQattt1FoFXbF5VHFswIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "105",
+   "name": "__MSG_extensionName__",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "permissions": [ "scripting", "activeTab", "clipboardWrite", "contextMenus", "storage" ],
+   "short_name": "__MSG_extensionShortName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.5.2",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "fonts/roboto-latin-regular.woff2", "fonts/roboto-latin-500.woff2", "fonts/roboto-latin-700.woff2" ]
+   }, {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "selectionStart.570af368.css", "selectionStart.3ed704db.css", "selectionStart.15c0e00d.css", "selectionStart.eabaedbc.css", "selectionStart.a90784a2.css", "selectionStart.9bedcaa1.css", "selectionStart.4b0ccf6b.css", "selectionStart.5ecba23b.css", "selectionStart.6075cb05.css", "selectionStart.a72175f6.css", "selectionStart.7b5526f3.css", "selectionStart.3cbd11ea.css", "selectionStart.e0d33dc5.css", "selectionStart.4998255a.css", "selectionStart.ffad79ce.css", "selectionStart.02a908a7.css", "selectionStart.ad0a25ae.css", "selectionStart.25c369bf.css", "selectionStart.0aa95b8e.css", "selectionStart.6db7483a.css", "selectionStart.638a6441.css", "selectionStart.17bab65f.css", "selectionStart.bf870d27.css", "selectionStart.c7ae8adb.css", "selectionStart.efa0056d.css", "selectionStart.4ae2d9a9.css", "selectionStart.8c868fee.css", "selectionStart.94e21fe0.css", "selectionStart.29f821cf.css", "selectionStart.2202fc66.css", "selectionStart.7a6e70fe.css", "selectionStart.7b4079e6.css" ]
+   } ]
+}

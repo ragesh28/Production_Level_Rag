@@ -1,0 +1,55 @@
+{
+   "action": {
+      "default_popup": "public/index.html"
+   },
+   "background": {
+      "service_worker": "src/background.js"
+   },
+   "content_scripts": [ {
+      "exclude_matches": [ "https://www.memoryplugin.com/*" ],
+      "js": [ "src/content.js" ],
+      "matches": [ "https://www.anthropic.com/*", "https://claude.ai/*", "https://chat.openai.com/*", "https://chatgpt.com/*", "https://gemini.google.com/*", "https://chat.z.ai/*", "https://kimi.com/*", "https://www.typingmind.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "src/content-scripts/gemini.js" ],
+      "matches": [ "https://gemini.google.com/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "src/content-scripts/typingmind.js" ],
+      "matches": [ "https://www.typingmind.com/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "src/content-scripts/deepseek.js" ],
+      "matches": [ "https://chat.deepseek.com/*" ],
+      "run_at": "document_idle"
+   }, {
+      "exclude_matches": [ "https://www.memoryplugin.com/*", "https://claude.ai/*", "https://chat.openai.com/*", "https://chatgpt.com/*", "https://gemini.google.com/*", "https://chat.z.ai/*", "https://kimi.com/*", "https://www.typingmind.com/*" ],
+      "js": [ "src/detect_supported_clients.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline'"
+   },
+   "description": "Stop repeating important details in every new AI chat with shared memory across your chats on ChatGPT, Claude, Gemini, and more.",
+   "externally_connectable": {
+      "matches": [ "http://localhost:3000/*", "https://www.memoryplugin.com/*", "https://memoryplugin.com/*", "https://memoryplugin-stage.vercel.app/*" ]
+   },
+   "host_permissions": [ "https://*.memoryplugin.com/*", "\u003Call_urls>" ],
+   "icons": {
+      "128": "public/128x128.png",
+      "16": "public/16x16.png",
+      "32": "public/32x32.png",
+      "48": "public/48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+ZISww/q8CJBSDTihiU9FqzvdOpvd7H7fVeiuTADsLXtEcnxiGA12dANKRz9nFWf9QJNC/aZ/5eijPxc/b37tmRQ8/vBgSzGo8j99q2lWxSZ7E2qRGo3OuudDRl9aipwECTxfh7rt8f4qSVkMUEQZANdM+WLxAoDeQfOFpZwezdY1nf1wx7/4v/vYXLvL6F9cmo3KVNDW3RO8M4SLy/IaxmvyyzGItKpcESCesc0n/u76mcE2lZ4pYUdJ2oo+Y2w9HcixHwVD9caZHtuh/GjExTB8FVMiZ8OH5GtgiC25TCdfE/Jp9Rzhoo1890eDue1SP/SG/c3Gtfr+WDOAAdLYwIDAQAB",
+   "manifest_version": 3,
+   "name": "MemoryPlugin - Long-Term Memory for AI Chats",
+   "permissions": [ "storage", "cookies", "scripting", "alarms", "http://*/*", "https://*/*", "webRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.1.3",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "public/hero-img.webp", "public/128x128.png", "public/onboarding.html", "public/provider-logos/*", "src/content.js", "src/chunks/*.js", "chunks/*.js" ]
+   } ]
+}

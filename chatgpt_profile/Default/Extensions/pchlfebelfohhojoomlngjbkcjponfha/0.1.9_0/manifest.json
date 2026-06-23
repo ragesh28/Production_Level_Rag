@@ -1,0 +1,35 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "data/icons/16.png",
+         "32": "data/icons/32.png",
+         "48": "data/icons/48.png",
+         "64": "data/icons/64.png"
+      },
+      "default_popup": "data/popup/popup.html",
+      "default_title": "Video & Audio Downloader"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "description": "Easily download video & audio streams via toolbar popup.",
+   "homepage_url": "https://mybrowseraddon.com/video-audio-downloader.html",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlRjuosSyfehqfbCBOIb8hOKDrqLsgk/qvXAku/e87ep2+EARtM5bAeP3j+t41mWfF2Pg6TyJBhBirxGiDHOGKhggB+MmyCyO4c8tWRDs0hmSF+gDsmx+wwoOj26DI8+A6HqXEz5jL1czhfzsQm9vIL3oUpJVvNTeH2S2gR5Ng7Pu9D7kgDcenOiMObRIrwqLdcZmw9tMVsfpu+iphZOFsY+ABGje1ceokHS9jWM2lyTOc3v6VWz0WEStgQx31d/oAlaqlYGIOd1NwIoBhfGQBzOGvyw/AtAocFZRgwEin3xV/Zso4/TXx5+zvJae09Pll0xXvkkuH9gsFSWnTn2wZwIDAQAB",
+   "manifest_version": 3,
+   "name": "Video & Audio Downloader",
+   "permissions": [ "storage", "downloads", "webRequest", "notifications" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.9"
+}

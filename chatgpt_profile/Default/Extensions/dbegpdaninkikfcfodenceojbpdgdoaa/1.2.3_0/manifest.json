@@ -1,0 +1,43 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "assets/extension-icon.png",
+         "24": "assets/extension-icon.png",
+         "32": "assets/extension-icon.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "GeePeeTee"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "suggested_key": {
+            "chromeos": "Ctrl+Shift+Space",
+            "default": "Ctrl+Shift+Space",
+            "linux": "Ctrl+Shift+Space",
+            "mac": "Command+Shift+Space",
+            "windows": "Ctrl+Shift+Space"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "contentScript.js" ],
+      "matches": [ "http://*/*" ]
+   } ],
+   "description": "Create text completions/edits, and generate images easily with a prompt.",
+   "host_permissions": [ "http://*/*" ],
+   "icons": {
+      "128": "assets/icon-128.png",
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhJdF7CRJWhaglb9v50La7PzbRdr14geFmUTedUREms7lOMgcHIOYaJQcMesanZcYtuNnn7MKcuvcZtFY65E4A4EOP/vKztPcHpUTgFgTILZmxd2JRhRENzKwWHOuE/xn/1BvfviX3xyjBG9E+3lUzJp19+pKZWw4jfCZSBsBEAk4WWH/mTF6TQ9uAG1DTB/rozW4oeFuoGBgqyIhQUvvvedhWsuWgMwFdMRqjR5TVrfJp9AgetNjbTu9Li758S/kLk0q81t7s775U8jNFWENVrPyWStxRlpAp9ViWlx2rMm9cK9VksGIqd0idJ62G+oaItxyRNL096MRT32ThYRtqwIDAQAB",
+   "manifest_version": 3,
+   "name": "GeePeeTee - OpenAi ChatGPT + Image assistant",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.3"
+}

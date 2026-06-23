@@ -1,0 +1,539 @@
+/**
+ * =============================================================================
+ * MaxMemory - contentScript.css
+ * =============================================================================
+ */
+
+/**
+ * =============================================================================
+ * Main UI Containers (Above Input)
+ * =============================================================================
+ */
+
+.maxmemory-main-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* Toolbar styling */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Dark mode support for the toolbar line */
+html.dark .maxmemory-main-container {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.maxmemory-right-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.maxmemory-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.maxmemory-brand-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+    user-select: none;
+}
+
+/**
+ * =============================================================================
+ * Toggle Switch
+ * =============================================================================
+ */
+
+.maxmemory-toggle-container {
+    margin-left: 8px;
+    display: flex;
+}
+
+.maxmemory-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.maxmemory-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.maxmemory-toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 18px;
+}
+
+.maxmemory-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.maxmemory-toggle-switch input:checked + .maxmemory-toggle-slider {
+    background-color: #10a37f;
+}
+
+.maxmemory-toggle-switch input:checked + .maxmemory-toggle-slider:before {
+    transform: translateX(14px);
+}
+
+.maxmemory-toggle-switch input:focus + .maxmemory-toggle-slider {
+    box-shadow: 0 0 1px #10a37f;
+}
+
+/* Dark mode support for toggle */
+html.dark .maxmemory-toggle-slider {
+    background-color: #4b5563;
+}
+
+html.dark .maxmemory-toggle-switch input:checked + .maxmemory-toggle-slider {
+    background-color: #10a37f;
+}
+
+/**
+ * =============================================================================
+ * Settings Button & Memory Limit Indicator
+ * =============================================================================
+ */
+
+.maxmemory-settings-button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    margin-left: 8px;
+}
+
+.maxmemory-settings-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.memory-limit-indicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    z-index: 10;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/**
+ * =============================================================================
+ * Memory Suggestions (Auto-Save + Undo UI)
+ * =============================================================================
+ */
+
+.memory-suggestions-container {
+    margin-top: 10px;
+    padding: 6px 0 0 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    animation: slideInFromBottom 0.25s ease-out;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.memory-suggestions-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+}
+
+.detected-mode-label {
+    margin-left: auto;
+    padding: 1px 6px;
+    background: rgba(107, 114, 128, 0.04);
+    color: #a1a1aa;
+    font-size: 9px;
+    font-weight: 400;
+    border-radius: 999px;
+    text-transform: capitalize;
+    opacity: 0.8;
+}
+
+.memory-suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.memory-suggestion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 8px 6px 10px;
+    background: transparent;
+    border: none;
+    border-left: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.memory-suggestion-item:hover {
+    border-color: rgba(0, 0, 0, 0.14);
+    background: rgba(0, 0, 0, 0.015);
+}
+
+.memory-suggestion-item--saved {
+    background: transparent;
+    border-color: rgba(16, 163, 127, 0.18);
+}
+
+.memory-suggestion-item--failed {
+    background: rgba(239, 68, 68, 0.03);
+    border-color: rgba(239, 68, 68, 0.18);
+}
+
+.suggestion-text {
+    flex: 1;
+    line-height: 1.35;
+    color: #6b7280;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.suggestion-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 3px;
+    padding: 1px 6px;
+    background: rgba(107, 114, 128, 0.06);
+    color: #9ca3af;
+    font-size: 9px;
+    font-weight: 500;
+    border-radius: 999px;
+    border: 1px solid rgba(107, 114, 128, 0.08);
+    letter-spacing: 0.01em;
+}
+
+.suggestion-buttons {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.memory-edit-field {
+    flex: 1;
+    width: 100%;
+    min-height: 60px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border: 1px solid #10a37f;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    color: #1f2937; /* FIX: Explicitly set dark text color */
+    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.memory-edit-field:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px rgba(16, 163, 127, 0.2);
+}
+
+.memory-suggestion-item button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.memory-suggestion-item button:hover:not(:disabled) { transform: none; }
+.memory-suggestion-item button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.memory-suggestion-item button svg {
+    transition: fill 0.2s ease;
+    fill: currentColor; /* FIX: SVG icon inherits its color from the button's 'color' property */
+}
+
+/* Approve Button */
+.approve-button { background-color: #f0fdf4; color: #10a37f; border-color: #a7f3d0; }
+.approve-button:hover:not(:disabled) { background-color: #10a37f; color: white; border-color: #0d9488; }
+
+/* Edit Button */
+.edit-button {
+    background-color: #f3f4f6; /* Light grey background instead of transparent */
+    color: #ffffff;           /* White icon for subtle appearance */
+    border-color: #e5e7eb;       /* Use a light border to define the button area */
+}
+.edit-button:hover:not(:disabled) {
+    background-color: #4b5563; /* Dark grey background */
+    color: white;              /* White icon */
+    border-color: #374151;       /* Matching darker border */
+}
+
+/* Undo Button */
+.undo-button {
+    width: auto !important;
+    min-width: 0;
+    height: auto !important;
+    padding: 3px 0;
+    background-color: transparent;
+    color: #9ca3af;
+    border-color: transparent;
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.undo-button:hover:not(:disabled) {
+    background-color: transparent;
+    color: #4b5563;
+    border-color: transparent;
+}
+
+/* Discard All Button */
+.discard-all-button {
+    width: auto;
+    padding: 0;
+    margin-top: 6px;
+    margin-left: 18px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.discard-all-button:hover {
+    background: transparent;
+    color: #4b5563;
+}
+
+/**
+ * =============================================================================
+ * In-Chat Elements (Injected Memories & Notifications)
+ * =============================================================================
+ */
+
+.memory-section {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.8em;
+    color: #6b7280;
+    padding: 6px 8px;
+    margin: 6px 0;
+    border-left: 3px solid #e5e7eb;
+    opacity: 0.9;
+}
+
+.memory-section svg { flex-shrink: 0; margin-right: 8px; margin-top: 2px; }
+.memories-content { user-select: text; pointer-events: auto; }
+.show-more-memories { cursor: pointer; font-weight: 500; color: #4b5563; }
+.show-more-memories:hover { text-decoration: underline; }
+
+.extracted-memory-notification { margin-top: 8px; animation: slideInFromBottom 0.3s ease-out; }
+.memory-prefix { font-size: 11px; color: #9ca3af; font-weight: 400; display: flex; align-items: center; gap: 4px; }
+.memory-prefix-text { cursor: pointer; transition: color 0.2s ease; }
+.memory-prefix-text:hover { color: #4b5563; text-decoration: underline; }
+.extracted-memory-text { font-size: 13px; color: #4b5563; font-style: italic; }
+
+.memory-limit-warning {
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.memory-limit-warning--guest {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    color: #b45309;
+}
+.memory-limit-warning--logged-in {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+}
+.memory-warning-icon { display: flex; }
+.memory-warning-text { flex: 1; line-height: 1.4; }
+.memory-warning-button {
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+.memory-warning-button--guest { background: #f59e0b; }
+.memory-warning-button--guest:hover { background: #d97706; }
+.memory-warning-button--logged-in { background: #2563eb; }
+.memory-warning-button--logged-in:hover { background: #1d4ed8; }
+
+/**
+ * =============================================================================
+ * Custom Mode Modal
+ * =============================================================================
+ */
+
+.custom-mode-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10000; animation: fadeIn 0.2s ease;
+}
+.custom-mode-modal-content {
+    background: white; border-radius: 12px; padding: 24px;
+    max-width: 400px; width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideInFromTop 0.3s ease-out;
+}
+.custom-mode-modal h3 { margin: 0 0 12px 0; font-size: 18px; color: #1f2937; }
+.custom-mode-modal p { margin: 0 0 16px 0; font-size: 14px; color: #6b7280; line-height: 1.5; }
+.custom-mode-modal textarea {
+    width: 100%; min-height: 80px; padding: 12px;
+    border: 1px solid #d1d5db; border-radius: 6px;
+    font-size: 14px; font-family: inherit; color: #374151;
+    resize: vertical; margin-bottom: 16px; box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.custom-mode-modal textarea:focus {
+    outline: none; border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+.custom-mode-modal-buttons { display: flex; gap: 8px; justify-content: flex-end; }
+.custom-mode-modal button { padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+.custom-mode-modal .cancel-button { border: 1px solid #d1d5db; background: white; color: #374151; }
+.custom-mode-modal .cancel-button:hover { background: #f9fafb; }
+.custom-mode-modal .submit-button { border: none; background: #8b5cf6; color: white; }
+.custom-mode-modal .submit-button:hover { background: #7c3aed; }
+
+/**
+ * =============================================================================
+ * Animations
+ * =============================================================================
+ */
+
+@keyframes slideInFromBottom {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+/**
+ * =============================================================================
+ * Main Submit Button ("Submit with Memories")
+ * =============================================================================
+ */
+
+.get-memories-button {
+    padding: 6px 10px;
+    background-color: #ffffff;
+    color: #40414f; /* Matches ChatGPT's text color */
+    border: 1px solid #d9d9e3; /* Matches ChatGPT's border color */
+    border-radius: 0.75rem; /* Matches ChatGPT's button radius */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-left: auto;
+}
+
+.get-memories-button:hover:not(:disabled) {
+    background-color: #f7f7f8; /* Subtle hover effect */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.get-memories-button:disabled {
+    background-color: #fcfcfc;
+    color: #ababbb;
+    border-color: #ececf1;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Loading animation for the button */
+.get-memories-button.loading {
+    cursor: wait;
+}
+
+.get-memories-button.loading span {
+    animation: fade-in-out 1.5s ease-in-out infinite;
+}
+
+@keyframes fade-in-out {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

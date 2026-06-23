@@ -1,0 +1,226 @@
+<!-- popup.html  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../assets/popup.css">
+</head>
+<body class="m-0 p-0 min-h-screen bg-gray-50 w-full font-sans text-gray-900">
+  <div class="max-w-3xl mx-auto px-5 bg-white min-h-screen shadow-sm">
+    <div class="px-4 py-3 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
+      <!-- Sign In Section for Unauthenticated Users -->
+
+      
+      <!-- User Profile Section for Authenticated Users -->
+      <div id="user-profile" class="flex items-center text-sm text-gray-700" style="display: none;">
+        <div class="flex items-center gap-2 mr-3">
+          <span id="user-greeting" class="font-medium"></span>
+          <span id="pro-badge" class="hidden inline-flex items-center px-2 py-0.5 bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-xs font-medium rounded-full shadow-sm">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Pro
+          </span>
+        </div>
+        <button id="signout-button" title="Sign Out" class="bg-transparent border-none cursor-pointer p-1 flex items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-between items-start py-6 px-4 mb-4">
+      <div class="flex-1">
+        <h1 class="text-xl font-bold text-gray-900 mb-2">MaxMemory</h1>
+        <p class="text-sm text-gray-600 mb-4">Long-term memory for ChatGPT</p>
+        <div class="inline-flex items-center gap-2  rounded-lg border px-2 py-1 border-gray-100">
+          <span class="text-xs text-gray-500">Works with</span>
+          <div class="flex items-center gap-2">
+            <div class="w-5 h-5 rounded overflow-hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512" class="w-full h-full"><rect fill="#10A37F" width="512" height="512" rx="104.187" ry="105.042"/><path fill="#fff" fill-rule="nonzero" d="M378.68 230.011a71.432 71.432 0 003.654-22.541 71.383 71.383 0 00-9.783-36.064c-12.871-22.404-36.747-36.236-62.587-36.236a72.31 72.31 0 00-15.145 1.604 71.362 71.362 0 00-53.37-23.991h-.453l-.17.001c-31.297 0-59.052 20.195-68.673 49.967a71.372 71.372 0 00-47.709 34.618 72.224 72.224 0 00-9.755 36.226 72.204 72.204 0 0018.628 48.395 71.395 71.395 0 00-3.655 22.541 71.388 71.388 0 009.783 36.064 72.187 72.187 0 0077.728 34.631 71.375 71.375 0 0053.374 23.992H271l.184-.001c31.314 0 59.06-20.196 68.681-49.995a71.384 71.384 0 0047.71-34.619 72.107 72.107 0 009.736-36.194 72.201 72.201 0 00-18.628-48.394l-.003-.004zM271.018 380.492h-.074a53.576 53.576 0 01-34.287-12.423 44.928 44.928 0 001.694-.96l57.032-32.943a9.278 9.278 0 004.688-8.06v-80.459l24.106 13.919a.859.859 0 01.469.661v66.586c-.033 29.604-24.022 53.619-53.628 53.679zm-115.329-49.257a53.563 53.563 0 01-7.196-26.798c0-3.069.268-6.146.79-9.17.424.254 1.164.706 1.695 1.011l57.032 32.943a9.289 9.289 0 009.37-.002l69.63-40.205v27.839l.001.048a.864.864 0 01-.345.691l-57.654 33.288a53.791 53.791 0 01-26.817 7.17 53.746 53.746 0 01-46.506-26.818v.003zm-15.004-124.506a53.5 53.5 0 0127.941-23.534c0 .491-.028 1.361-.028 1.965v65.887l-.001.054a9.27 9.27 0 004.681 8.053l69.63 40.199-24.105 13.919a.864.864 0 01-.813.074l-57.66-33.316a53.746 53.746 0 01-26.805-46.5 53.787 53.787 0 017.163-26.798l-.003-.003zm198.055 46.089l-69.63-40.204 24.106-13.914a.863.863 0 01.813-.074l57.659 33.288a53.71 53.71 0 0126.835 46.491c0 22.489-14.033 42.612-35.133 50.379v-67.857c.003-.025.003-.051.003-.076a9.265 9.265 0 00-4.653-8.033zm23.993-36.111a81.919 81.919 0 00-1.694-1.01l-57.032-32.944a9.31 9.31 0 00-4.684-1.266 9.31 9.31 0 00-4.684 1.266l-69.631 40.205v-27.839l-.001-.048c0-.272.129-.528.346-.691l57.654-33.260a53.696 53.696 0 0126.816-7.177c29.644 0 53.684 24.04 53.684 53.684a53.91 53.91 0 01-.774 9.077v.003zm-150.831 49.618l-24.111-13.919a.859.859 0 01-.469-.661v-66.587c.013-29.628 24.053-53.648 53.684-53.648a53.719 53.719 0 0134.349 12.426c-.434.237-1.191.655-1.694.96l-57.032 32.943a9.272 9.272 0 00-4.687 8.057v.053l-.40 80.376zm13.095-28.233l31.012-17.912 31.012 17.9v35.812l-31.012 17.901-31.012-17.901v-35.8z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-right">
+        <div class="text-xs text-gray-500">
+          <span class="block mb-1">Contact Founder</span>
+          <a href="https://founderline.web.app/maxmemory" target="_blank" class="text-indigo-600 hover:text-indigo-800 block mb-1 underline">Fast via FounderLine</a>
+          Or <span class="text-indigo-600">njraladdin@gmail.com</span>
+        </div>
+      </div>
+    </div>
+      
+
+
+    <div class="px-6">
+
+
+
+
+    <!-- Memory Limit Banner -->
+    <div id="memory-limit-banner" class="hidden mb-4 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+      <div class="flex items-start gap-3 mb-3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" class="flex-shrink-0 mt-0.5">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="12" y1="9" x2="12" y2="13" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="12" y1="17" x2="12.01" y2="17" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex-1">
+          <div id="memory-limit-title" class="text-orange-900 text-sm font-semibold leading-relaxed mb-1">Sign In with Google for 100 free memories</div>
+          <div id="memory-limit-text" class="text-orange-800 text-sm font-medium leading-relaxed">You have used 0/10 guest memories.</div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button id="memory-limit-signin-button" class="flex items-center gap-2 px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-md hover:bg-gray-50 border border-gray-300 transition-colors duration-200 shadow-sm">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 48 48"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.42-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg>
+          Sign In with Google
+        </button>
+      </div>
+    </div>
+
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <label for="sort-memories" class="text-sm font-medium text-gray-700">Sort by:</label>
+            <select id="sort-memories" class="border border-gray-300 rounded-md px-3 py-1 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2">
+            <label for="filter-tag" class="text-sm font-medium text-gray-700">Filter Tag:</label>
+            <select id="filter-tag" class="border border-gray-300 rounded-md px-3 py-1 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+              <option value="all">All Tags</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button id="upgrade-button" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white border-none rounded-lg font-medium cursor-pointer transition-colors duration-200 hover:bg-purple-700" style="display: none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Upgrade to Pro
+          </button>
+          <button id="add-memory-button" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white border-none rounded-lg font-medium cursor-pointer transition-colors duration-200 hover:bg-indigo-700">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Add Memory
+          </button>
+        </div>
+      </div>
+      <div id="add-memory-section" class="mb-4 p-3 rounded-xl bg-white border border-gray-300 transition-all duration-200 hover:border-gray-400 hover:shadow-sm" style="display: none;">
+        <textarea id="new-memory-input" placeholder="Type your memory here..." rows="3" class="w-full p-2 border-none text-sm leading-relaxed resize-none bg-transparent mb-2 min-h-[100px] focus:outline-none"></textarea>
+        <div class="px-2 pb-2">
+          <input type="text" id="new-memory-tag" placeholder="Tag (e.g. Andrea, Constraints) - Optional" class="w-full p-2 text-xs border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+        </div>
+        <div class="flex justify-end gap-1 pt-2 border-t border-gray-200">
+            <button id="cancel-add-memory" class="flex items-center justify-center w-7 h-7 p-0 border-none rounded-md bg-transparent text-gray-500 cursor-pointer transition-all duration-200 hover:bg-gray-200 hover:text-red-600" title="Cancel">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button id="confirm-add-memory" class="flex items-center justify-center w-7 h-7 p-0 border-none rounded-md bg-transparent text-gray-500 cursor-pointer transition-all duration-200 hover:bg-green-100 hover:text-green-600" title="Save">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+      </div>
+      
+      <div class="text-xs text-gray-600 mb-4 px-1" id="memory-count"></div>
+      <div id="all-memories" class="p-1"></div>
+
+      <!-- Add the pagination controls -->
+      <div id="pagination-controls" class="flex items-center justify-center gap-4 mt-6 pt-4">
+          <button id="prev-page" class="flex items-center justify-center w-8 h-8 border border-gray-300 bg-white rounded-md cursor-pointer transition-all duration-200 hover:bg-gray-200 hover:border-gray-400 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+          <span id="page-info" class="text-xs text-gray-500">Page 1 of 1</span>
+          <button id="next-page" class="flex items-center justify-center w-8 h-8 border border-gray-300 bg-white rounded-md cursor-pointer transition-all duration-200 hover:bg-gray-200 hover:border-gray-400 disabled:opacity-50 disabled:cursor-not-allowed">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+      </div>
+    </div>
+
+    <!-- Hidden Templates for Dynamic Content -->
+    
+    <!-- Backend Status Message Template -->
+    <div id="backend-status-template" class="hidden">
+      <div class="flex items-center gap-2 p-3 mb-4 rounded-lg border border-gray-200 bg-gray-50">
+        <div class="flex-shrink-0">
+          <!-- Icon will be dynamically inserted -->
+        </div>
+        <span class="text-sm font-medium text-gray-700">
+          <!-- Status text will be dynamically inserted -->
+        </span>
+      </div>
+    </div>
+
+
+
+    <!-- Empty State Template -->
+    <div id="empty-state-template" class="hidden">
+      <div class="flex flex-col items-center justify-center text-center py-10 px-5 bg-white rounded-xl border border-gray-100 my-5">
+        <div class="flex items-center justify-center w-20 h-20 bg-gray-50 rounded-2xl mb-4">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="1.5" class="mx-auto">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2 m-0">No Memories Yet</h3>
+        <p class="text-sm text-gray-600 mb-6 m-0 leading-relaxed max-w-xs">Your memories will appear here. Click the + button above to create your first memory.</p>
+        <button id="empty-state-add-button" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-900 border-none rounded-lg font-medium cursor-pointer transition-all duration-200 hover:bg-gray-200 hover:text-gray-800">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2">
+            <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Add Your First Memory
+        </button>
+      </div>
+    </div>
+
+    <!-- Memory Card Template -->
+    <div id="memory-card-template" class="hidden">
+      <div class="mb-3 p-4 rounded-xl bg-white border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:border-gray-300">
+        <div class="mb-3 flex justify-between gap-3 items-start">
+          <div class="flex flex-col gap-2 w-full relative">
+            <span id="new-tag-template" class="absolute top-0 right-0 inline-flex items-center px-1.5 py-0.5 bg-blue-500 text-white rounded-md text-xs font-medium tracking-wide shadow-sm backdrop-blur-sm hidden">New</span>
+            <span class="block text-sm text-gray-900 leading-relaxed whitespace-pre-wrap w-full min-w-0 pr-12" contenteditable="false"></span>
+            <input type="text" class="memory-tag-edit-input hidden p-1.5 text-xs border border-gray-300 rounded w-48 font-sans" placeholder="Edit tag..." />
+          </div>
+        </div>
+        <div class="flex justify-between items-center pt-3 border-t border-gray-100 mt-3">
+          <div class="flex flex-col gap-1 text-gray-500 text-xs">
+            <div class="flex items-center gap-2 flex-wrap">
+              <div class="memory-date"></div>
+              <span class="memory-tag-badge px-2 py-0.5 bg-indigo-50 text-indigo-700 text-[10px] font-semibold rounded-md border border-indigo-100 hidden"></span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="flex items-center justify-center w-8 h-8 p-0 border border-gray-300 rounded-md bg-white text-gray-500 hover:bg-gray-50 hover:text-indigo-600 transition-colors" title="Edit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </button>
+            <button class="flex items-center justify-center w-8 h-8 p-0 border border-gray-300 rounded-md bg-white text-gray-500 hover:bg-gray-50 hover:text-red-600 transition-colors" title="Delete">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../js/popup.js"></script>
+</body>
+</html>

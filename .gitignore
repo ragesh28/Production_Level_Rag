@@ -1,0 +1,32 @@
+# Secrets & credentials (NEVER PUSHED)
+.env
+password.txt
+users.json
+
+# ChatGPT automation (removed from cloud version)
+chatgpt_automation.py
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Data & databases
+chroma_db/
+chroma_db_data/
+user_data/
+data_files/
+
+# Temp files from uploads
+temp_*
+
+# Logs
+error.log
+pip_err.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large media
+*.mp4

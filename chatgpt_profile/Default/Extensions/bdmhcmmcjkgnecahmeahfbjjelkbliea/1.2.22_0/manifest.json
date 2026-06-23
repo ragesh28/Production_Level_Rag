@@ -1,0 +1,37 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "32": "icons/icon32.png",
+         "48": "icons/icon48.png"
+      },
+      "default_popup": "html/popup.html"
+   },
+   "background": {
+      "service_worker": "js/background.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "css": [ "css/contentScript.css" ],
+      "js": [ "js/icons.js", "js/contentScript.js" ],
+      "matches": [ "https://chatgpt.com/*" ]
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://maxmemory-production.up.railway.app https://www.googleapis.com https://generativelanguage.googleapis.com https://maxmemory-67d43.firebaseapp.com https://identitytoolkit.googleapis.com https://accounts.google.com https://firestore.googleapis.com https://*.firebaseio.com https://securetoken.googleapis.com https://api.mixpanel.com https://api-js.mixpanel.com https://decide.mixpanel.com https://api.ipify.org;"
+   },
+   "description": "Make ChatGPT remember all your past conversations in every new chat.",
+   "host_permissions": [ "https://chatgpt.com/*", "https://api.mixpanel.com/*", "https://api.ipify.org/*", "https://maxmemory.ai/*", "http://localhost:5173/*", "https://maxmemory-production.up.railway.app/*" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxpNWRuyS1yOrdD2Q0pJabO3F02woz0y39fFYnKVOOFeVEg1hQ7GPXHvmoDO20hT11qFuA5u+mR/i1iIX7KppkHzTJ6661ZuV3O040pry9z/qbtuA53seeAUXAS4wzAy6ExoFbu8lfb6Q0W3gWIaAjK93EwHAdlw8iwiqlllWrD+Wfr0boY63/nBOmVOBA52ZOd2dw5eoK9aTW+bhV2yI8P5qXbg4P6MWaSh2UrhgKZi7zYx9l5O2b+JEaXJqHRyYm5cyoJZFUCbE07YC//T2yVmHbUkL60NMpGVlq3fJRJN/gPCzAkpGCFYgfyxyWJmKe3/iyjfiWEcHFEBii7r8IQIDAQAB",
+   "manifest_version": 3,
+   "name": "MaxMemory - Long-term memory for ChatGPT",
+   "permissions": [ "storage", "tabs", "webRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.22"
+}

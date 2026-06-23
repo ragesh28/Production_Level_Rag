@@ -1,0 +1,40 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "data/icons/disabled/16.png",
+         "32": "data/icons/disabled/32.png",
+         "48": "data/icons/disabled/48.png"
+      },
+      "default_title": "The extension is by default inactive for all websites (indicated by a gray icon). Use this button to toggle the current site to be included in the activation list (changing the icon to blue). The page will automatically reload after you make changes."
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "homepage_url": "https://webextension.org/listing/always-active.html",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "256": "data/icons/256.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "512": "data/icons/512.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAorqJPlIV6TgnUObTQTEfPIfju/XXuDZ8e/MF4yeWEKqwsZqDDLr7eDMgp0idWpMUS3Le0hi6bLqVDYlkhxLNXDxrm28OCHW32wp64Tug/F+2NGuWaiwYAsNMrR81oBvg4WyI1dK3/0GvdMpf/XM9QSgfpEzK1oPs0xreUrGfR9nbQ4+/VPlIloAg8DSg4FZUF4vB8HRGzO5p456CgKZQXyQ44XBMcMNEY0tDsowtwk91bjZlm20X8NN75P+zyMebYw9vN+lpo/r+xYXvEdDkOHQIiOGf2ZEycLpv/RZl46Wis3n/BpKqS/5PFzNfhHbQgfc7GMN7Ksh86L1nzNmTLQIDAQAB",
+   "manifest_version": 3,
+   "name": "Always active Window - Always Visible",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "data/options/index.html"
+   },
+   "permissions": [ "storage", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.4.6"
+}
