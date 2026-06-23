@@ -5,7 +5,7 @@ on:
 # Need permissions to trigger other workflows
 permissions:
   actions: write
-  contents: read
+  contents: write
 
 jobs:
   run-neuralrag:
@@ -46,12 +46,23 @@ jobs:
           
           # 2. Start Cloudflare Tunnel in background and capture URL
           cloudflared tunnel --url http://127.0.0.1:5000 > cloudflare.log 2>&1 &
-          sleep 5
+          sleep 8
+          CF_URL=$(grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log)
           echo "========================================="
           echo "  NeuralRAG is LIVE!"
-          echo "  Your Public URL is:"
-          grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log || echo "URL not found yet, check the raw cloudflare.log"
+          echo "  Your Public URL is: $CF_URL"
           echo "========================================="
+          
+          # Update README.md with the new URL
+          if [ ! -z "$CF_URL" ]; then
+            git pull
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            sed -i -E "s|https://[a-zA-Z0-9-]+\.trycloudflare\.com|$CF_URL|g" README.md
+            git add README.md
+            git commit -m "Update Live URL in README"
+            git push
+          fi
           
           # 3. Wait for 5 hours and 45 minutes (20700 seconds)
           echo "Sleeping for 5h 45m..."

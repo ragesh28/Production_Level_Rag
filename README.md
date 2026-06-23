@@ -1,0 +1,12 @@
+# Production Level RAG
+
+Welcome to NeuralRAG!
+
+### 🟢 Live Instance Status
+**Live Link:** [https://pending.trycloudflare.com](https://pending.trycloudflare.com)
+*(This link is automatically updated by GitHub Actions every time a new instance starts.)*
+
+---
+
+## About
+This project runs entirely on GitHub Actions, using Ollama (Qwen 2.5 7B) completely free.
