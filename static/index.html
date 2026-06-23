@@ -1158,10 +1158,6 @@
                                     <span>LM Studio (Offline)</span>
                                     <span class="model-tag local">🏠 Local</span>
                                 </div>
-                                <div class="model-dropdown-item" data-model="chatgpt">
-                                    <div class="model-dot"></div>
-                                    <span>Local LLM 2 (ChatGPT)</span>
-                                    <span class="model-tag pro">🌐 Browser</span>
                                 </div>
                             </div>
                         </button>
@@ -1441,10 +1437,18 @@
     // ============================================================
     // SIDEBAR TOGGLE
     // ============================================================
+    // Open sidebar by default
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+
     btnOpenSidebar.addEventListener('click', () => {
-        sidebar.classList.add('open');
-        sidebarOverlay.classList.add('active');
-        closeHistorySidebar();
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+        } else {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('active');
+            closeHistorySidebar();
+        }
     });
     btnCloseSidebar.addEventListener('click', closeSidebar);
     sidebarOverlay.addEventListener('click', closeSidebar);
