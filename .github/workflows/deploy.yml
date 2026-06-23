@@ -31,48 +31,40 @@ jobs:
           # Using user's requested model
           ollama pull qwen2.5:7b
 
-      - name: Install Ngrok
+      - name: Install Cloudflared
         run: |
-          curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
-          echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
-          sudo apt update && sudo apt install ngrok
+          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared.deb
 
       - name: Start App, Tunnel & Manage Lifecycle
         env:
-          GOOGLE_API_KEYS: ${{ secrets.GOOGLE_API_KEYS }}
-          OPENROUTER_API_KEYS: ${{ secrets.OPENROUTER_API_KEYS }}
-          GROQ_API_KEYS: ${{ secrets.GROQ_API_KEYS }}
-          NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTHTOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 1. Start Ngrok with the secret token
-          ngrok config add-authtoken $NGROK_AUTHTOKEN
-          
-          # 2. Start the web server
+          # 1. Start the web server
           python server.py &
           sleep 3
           
-          # 3. Start Ngrok tunnel in background and capture URL
-          ngrok http 5000 --log stdout > ngrok.log &
+          # 2. Start Cloudflare Tunnel in background and capture URL
+          cloudflared tunnel --url http://127.0.0.1:5000 > cloudflare.log 2>&1 &
           sleep 5
           echo "========================================="
           echo "  NeuralRAG is LIVE!"
-          echo "  Your Ngrok URL is:"
-          grep -o "https://[a-zA-Z0-9-]*\.ngrok-free\.app" ngrok.log
+          echo "  Your Public URL is:"
+          grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log || echo "URL not found yet, check the raw cloudflare.log"
           echo "========================================="
           
-          # 4. Wait for 5 hours and 45 minutes (20700 seconds)
+          # 3. Wait for 5 hours and 45 minutes (20700 seconds)
           echo "Sleeping for 5h 45m..."
           sleep 20700
           
-          # 5. Trigger the next workflow to start
+          # 4. Trigger the next workflow to start
           echo "5h 45m reached. Triggering the next workflow run..."
           gh workflow run deploy.yml
           
-          # 6. Wait 5 minutes for the new workflow to spin up
+          # 5. Wait 5 minutes for the new workflow to spin up
           echo "Sleeping for 5 minutes before terminating this run..."
           sleep 300
           
-          # 7. Gracefully exit, cancelling this workflow
+          # 6. Gracefully exit, cancelling this workflow
           echo "Time limit reached. Terminating current workflow."
           exit 0

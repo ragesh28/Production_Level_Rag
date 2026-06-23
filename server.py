@@ -138,36 +138,12 @@ key_pool = KeyPool()
 # MODEL CONFIGURATIONS
 # ============================================================
 MODEL_CONFIGS = {
-    "groq": {
-        "name": "Groq (Llama 3.3 70B)",
-        "base_url": "https://api.groq.com/openai/v1",
-        "key_provider": "groq",
-        "model": "llama-3.3-70b-versatile",
-    },
-    "openrouter": {
-        "name": "OpenRouter (Auto)",
-        "base_url": "https://openrouter.ai/api/v1",
-        "key_provider": "openrouter",
-        "model": "meta-llama/llama-3.3-70b-instruct",
-    },
-    "gemini": {
-        "name": "Gemini 2.5 Flash",
-        "type": "gemini",
-        "key_provider": "gemini",
-        "model": "gemini-2.5-flash",
-    },
     "ollama": {
-        "name": "LM Studio (Offline)",
-        "base_url": "http://127.0.0.1:1234/v1",
-        "key_provider": None,
-        "model": "qwen2.5-14b-instruct",
-    },
-        "ollama": {
         "name": "Ollama (Qwen 2.5 7B)",
         "base_url": "http://127.0.0.1:11434/v1",
         "key_provider": None,
         "model": "qwen2.5:7b",
-    },
+    }
 }
 
 # Persistent Bridge for Server (now handled dynamically per user session)
