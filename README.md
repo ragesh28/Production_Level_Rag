@@ -1,10 +1,16 @@
-# 🚀 NeuralRAG – Production‑Level AI Workspace
+<div align="center">
+
+# 📡 NeuralRAG – Production‑Level AI Workspace
+
+A premium, self‑hosted AI assistant that combines Retrieval‑Augmented Generation (RAG) with powerful remote system control.
 
 <br />
 
 [![View Live Hub](https://img.shields.io/badge/🔴_VIEW_LIVE_HUB-Click_Here-red?style=for-the-badge)](https://grades-material-difference-burke.trycloudflare.com/)
 
 <br /><br />
+
+</div>
 
 ---
 
