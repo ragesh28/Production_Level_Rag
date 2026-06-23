@@ -3,7 +3,7 @@
 Welcome to NeuralRAG!
 
 ### 🟢 Live Instance Status
-**Live Link:** [https://realm-releases-designated-trial.trycloudflare.com](https://realm-releases-designated-trial.trycloudflare.com)
+**Live Link:** [https://par-layer-widely-victor.trycloudflare.com](https://par-layer-widely-victor.trycloudflare.com)
 *(This link is automatically updated by GitHub Actions every time a new instance starts.)*
 
 ---
