@@ -3,7 +3,7 @@
 Welcome to NeuralRAG!
 
 ### 🟢 Live Instance Status
-**Live Link:** [https://geography-logic-handy-rocky.trycloudflare.com](https://geography-logic-handy-rocky.trycloudflare.com)
+**Live Link:** [https://sms-green-acid-deutschland.trycloudflare.com](https://sms-green-acid-deutschland.trycloudflare.com)
 *(This link is automatically updated by GitHub Actions every time a new instance starts.)*
 
 ---
