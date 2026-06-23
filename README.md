@@ -1,33 +1,48 @@
-# 🚀 NeuralRAG: Production Level AI
+# 🚀 NeuralRAG – Production‑Level AI Workspace
 
-Welcome to **NeuralRAG**! A highly robust, intelligent, and secure AI workspace built for advanced Retrieval-Augmented Generation (RAG) and remote system management.
+<br />
 
-### 🌐 Live Web Access
-**Click here to use the live app:**  
-[https://grades-material-difference-burke.trycloudflare.com/](https://grades-material-difference-burke.trycloudflare.com/)
+[![View Live Hub](https://img.shields.io/badge/🔴_VIEW_LIVE_HUB-Click_Here-red?style=for-the-badge)](https://grades-material-difference-burke.trycloudflare.com/)
 
-*(This is a dynamically hosted link that allows you to instantly access the intelligent AI workspace from anywhere in the world!)*
+<br /><br />
 
 ---
 
-## ✨ Core Features
+## ✨ What This Project Does
 
-### 🔄 Multi-Key Auto-Rotation Failover
-Never experience downtime or rate-limit errors! The system connects to multiple AI providers (including **Gemini**, **Groq**, and **OpenRouter**). If an API key hits a usage quota or fails, NeuralRAG will **automatically switch to the next available API key** seamlessly without interrupting your chat.
+NeuralRAG is a **premium, self‑hosted AI assistant** that combines Retrieval‑Augmented Generation (RAG) with powerful remote system control. It runs entirely on GitHub Actions and is exposed to the world via a Cloudflare tunnel (or Ngrok), giving you a live web UI that works from any device.
 
-### 🛡️ Secure Admin Gateway
-To ensure that unauthorized users cannot exploit or drain the AI's resources, the main page is protected by a secure **Admin Password**. Random visitors can view the interface, but they cannot use the AI without the proper authorization! 
+### 🎯 Core Features
 
-### 💻 Remote System Control
-Take absolute command of your machine from anywhere in the world! When securely authenticated, the AI can perform direct **System Control**. Whether routed securely through Cloudflare or Ngrok, you can securely execute commands and manage your system fully remotely using natural language.
+- **🔄 Multi‑API‑Key Auto‑Rotation** – Connects to Gemini, Groq, OpenRouter, etc. If one key hits its quota or fails, the system instantly switches to the next key without interrupting the conversation.
+- **🛡️ Admin Password Protection** – The main UI is gated by an admin password. Visitors can see the UI but cannot use the AI until the password is entered.
+- **🖥️ Remote System Control** – After authentication you can run commands on the host machine via a secure Cloudflare/Ngrok tunnel. Perfect for managing a server from anywhere.
+- **🔎 Live Web Search** – When you ask about current events or docs, the assistant performs a real‑time web search and synthesizes the freshest information.
+- **📂 Knowledge‑Base (RAG) Upload** – Drag‑and‑drop PDFs, TXT, CSV, Excel, or images directly in the sidebar. The files are indexed on‑the‑fly and used to answer your queries with zero‑shot accuracy.
+- **⚙️ Seamless Deployments** – Each GitHub Actions run automatically updates the Cloudflare tunnel URL and publishes a tiny redirect page on GitHub Pages, so the link in the badge is always current.
 
-### 🔍 Intelligent Web Search
-NeuralRAG is connected to the live internet. If you ask about current events, documentation, or live data, the AI will perform a **Web Search** to gather the most up-to-date and accurate information before synthesizing its response.
+> **Note:** The internal details (GitHub Actions configuration, secret handling, tunnel commands) are intentionally omitted from the public README to keep credentials safe.
 
-### 🧠 Advanced RAG (Knowledge Base)
-Easily inject your own knowledge into the AI! Upload PDFs, Excel sheets, text files, and images directly into the UI. The AI will securely process these documents and retrieve highly accurate, context-aware answers directly from your private files.
+## 📦 Quick Start (For Maintainers)
+
+- Set the secrets `GOOGLE_API_KEYS` and `GROQ_API_KEYS` in the repository settings.
+- Add an `ADMIN_PASSWORD` secret that the UI will require on first load.
+- Merge to `main` → the workflow provisions a fresh Cloudflare tunnel and updates the live badge.
+
+## 🧩 Technologies Used
+
+- **Python 3.11** – FastAPI server handling chat, RAG, and system commands.
+- **Cloudflare Tunnel** – Secure, zero‑config public URL.
+- **GitHub Actions** – CI/CD, automatic URL rotation, GitHub Pages redirect.
+- **Vanilla HTML/CSS/JS** – Clean, responsive UI with a persistent right‑hand sidebar.
+- **🔐 Secure Secrets Management** – All API keys and passwords stored as GitHub Actions secrets.
 
 ---
 
-### 🔒 Privacy & Security Note
-*For security purposes, personal passwords and API keys are strictly excluded from this repository's public code.*
+### 🙏 Contributing
+
+Feel free to open issues or PRs if you want to add new models, improve the UI, or extend system‑control capabilities. Please **do not expose any secret keys** in the repository.
+
+---
+
+**Enjoy exploring NeuralRAG!** 🎉
