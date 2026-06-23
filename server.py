@@ -139,10 +139,10 @@ key_pool = KeyPool()
 # ============================================================
 MODEL_CONFIGS = {
     "ollama": {
-        "name": "Ollama (Qwen 2.5 7B)",
+        "name": "Ollama (Llama 3.2 3B)",
         "base_url": "http://127.0.0.1:11434/v1",
         "key_provider": None,
-        "model": "qwen2.5:7b",
+        "model": "llama3.2",
     }
 }
 

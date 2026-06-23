@@ -9,4 +9,4 @@ Welcome to NeuralRAG!
 ---
 
 ## About
-This project runs entirely on GitHub Actions, using Ollama (Qwen 2.5 7B) completely free.
+This project runs entirely on GitHub Actions, using Ollama (Llama 3.2 3B) completely free.
