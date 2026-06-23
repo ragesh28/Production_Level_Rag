@@ -139,10 +139,10 @@ key_pool = KeyPool()
 # ============================================================
 MODEL_CONFIGS = {
     "gemini": {
-        "name": "Gemini 1.5 Flash",
+        "name": "Gemini 2.5 Flash",
         "type": "gemini",
         "key_provider": "gemini",
-        "model": "gemini-1.5-flash",
+        "model": "gemini-2.5-flash",
     },
     "groq": {
         "name": "Groq (Llama 3 70B)",
