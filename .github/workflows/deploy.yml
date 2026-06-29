@@ -41,8 +41,12 @@ jobs:
           
           # 2. Start Cloudflare Tunnel in background and capture URL
           cloudflared tunnel --url http://127.0.0.1:5000 > cloudflare.log 2>&1 &
-          sleep 8
-          CF_URL=$(grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log)
+          echo "Waiting for Cloudflare Tunnel URL..."
+          for i in {1..15}; do
+            CF_URL=$(grep -o 'https://[-a-zA-Z0-9]*\.trycloudflare\.com' cloudflare.log | head -n 1 || true)
+            if [ ! -z "$CF_URL" ]; then break; fi
+            sleep 2
+          done
           echo "========================================="
           echo "  NeuralRAG is LIVE!"
           echo "  Your Public URL is: $CF_URL"
@@ -66,8 +70,8 @@ jobs:
             echo '</div></body></html>' >> index.html
             
             git add README.md index.html
-            git commit -m "Update Live URL and GitHub Pages Redirect"
-            git push
+            git commit -m "Update Live URL and GitHub Pages Redirect" || echo "No changes to commit"
+            git push || echo "No changes to push"
             
             # Force GitHub Pages to rebuild since GITHUB_TOKEN pushes don't trigger it automatically
             echo "Triggering GitHub Pages rebuild..."
