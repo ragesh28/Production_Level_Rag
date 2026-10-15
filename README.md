@@ -6,7 +6,7 @@ A premium, self‑hosted AI assistant that combines Retrieval‑Augmented Genera
 
 <br />
 
-[![View Live Hub](https://img.shields.io/badge/🔴_VIEW_LIVE_HUB-Click_Here-red?style=for-the-badge)](https://flows-applicants-voting-interpretation.trycloudflare.com/)
+[![View Live Hub](https://img.shields.io/badge/🔴_VIEW_LIVE_HUB-Click_Here-red?style=for-the-badge)](https://reports-activities-charter-gauge.trycloudflare.com/)
 
 <br /><br />
 
